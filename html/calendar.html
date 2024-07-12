@@ -1,0 +1,128 @@
+<div class="calendar-wrap">
+  <div class="selected-day">
+    <span id="selectedDay">날자를 선택해 주세요</span>
+    <span id="selectedTime"></span>
+  </div>
+  <div class="calendar-header">
+      <button class="prev" onclick="cal.previous()"><i class="ico-cal-prev"></i></button>
+      <div class="year"></div>
+      <div class="month"></div>
+      <button class="next" onclick="cal.next()"><i class="ico-cal-next"></i></button>
+  </div>
+  <div class="calendar-body">
+      <table class="calendar">
+          <thead class="tbl-header"></thead>
+          <tbody class="tbl-body"></tbody>
+      </table>
+  </div>
+</div>
+
+<script>
+  let dateStatus = '';
+  let selectedDay = '';
+  let selectedDayFormat = '';
+  let selectedTime = '';
+  let startDay = '';
+  let endDay = '';
+  let days = ["일", "월", "화", "수", "목", "금", "토"];
+  let startTime = 0;
+
+  let disabledDate = [ //예약안되는날 설정
+        "2023-4-27",
+        "2023-4-3",
+      ]  
+  let maxDisableDate = 30
+
+  $('#startDay').on('click', function(){ // purchase_list
+    dateStatus = 'start';
+  });
+  $('#endDay').on('click', function(){ //purchase_list
+    dateStatus = 'end';
+  });
+
+  function calendarSelected(btn, year, month, date){
+
+    function today(){
+      let today = new Date().getFullYear() + "-"+ (new Date().getMonth() + 1) + "-" + new Date().getDate()
+      return today === year + "-" + month + "-" + date ? true : false
+    }
+
+    selectedDay = year+'-'+month+'-'+date;
+    selectedDayFormat = year+'. '+month+'. '+date+'.('+days[new Date(year, month-1, date).getDay()]+')';
+    $('#selectedDay').text(selectedDayFormat)
+
+    if(dateStatus === 'start') {//purchase_list
+      startDay = selectedDay;
+      $('#startDay').text(year+'. '+month+'. '+date+'.');
+    }
+    if(dateStatus === 'end'){//purchase_list
+      endDay = selectedDay;
+      $('#endDay').text(year+'. '+month+'. '+date+'.');
+    }
+    
+    $('.calendar .date').removeClass('on');
+    $(btn).addClass('on');
+
+
+    //시간 셋팅
+    timeSet(0, today());
+  }
+
+  function timeSet(t, today){
+    let time = today ? new Date().getHours() : t;
+      $('#selectedTime').text('');
+      $('#time-list').html('');
+      for(let i =0;i<=23;i++){
+        $('#time-list').append('<li class="'+( i === time ? 'on' : '') +'"><button type="button" '+(today && i < new Date().getHours() ? 'disabled' : '')+' data-id="time-'+i+'" onclick="timeSelect('+i+')">'+i+'시</button></li>');
+      }
+
+    timeSelect(time);
+    if(typeof time != 'number') time = 0;
+    $('[data-id=time-'+time+']').click();    
+
+    $('#time-list').scrollLeft(0);    
+    $('#time-list').scrollLeft($('#time-list li').eq(time).position().left - 20);    
+  }
+  
+  function timeSelect(time){
+    $('#selectedTime').text(time + '시 이후 출발');
+    $('#startTime').text(time + '시');
+    selectedTime = time;
+  }
+
+  // 팝업 열기 호출
+  function callCalendar(year, month, date){
+    if(dateStatus === 'start') selectedDay = startDay;
+    else if(dateStatus === 'end') selectedDay = endDay; 
+    else {
+      selectedDay = year+'-'+month+'-'+date;
+      selectedDayFormat = year+'. '+month+'. '+date+'.('+days[new Date(year, month-1, date).getDay()]+')';
+      $('#selectedDay').text(selectedDayFormat)
+    }
+    
+
+    cal = calendar(year, month, date);
+  }
+
+  // 팝업 닫기 호출
+  function closeCalendar(){
+    $('.calendar .tbl-body').html('');
+    $('.calendar .date').removeClass('on');
+    $('#time-list').scrollLeft(0);
+    selectedDay = '';
+  }
+
+  function resetCalendar(){
+    $('.calendar .date').removeClass('on');
+    $('.calendar .selected-txt').hide();
+    selectedDay = '';
+    startDay = '';
+    endDay = '';
+    $('#startDay').text('');    
+    $('#endDay').text('');    
+    $('#selectedDay').text('날자를 선택해 주세요');    
+    $('#selectedTime').text('');    
+  }
+
+  
+</script>

@@ -1,0 +1,171 @@
+<p class="text-noti"><i class="ico-noti"></i><span>할인승차권은 '어른' 기준만 조회 가능합니다.</span></p>
+<!-- list-passenger -->
+<div class="list-passenger" data-evt="toggle-list">
+  <ul>
+    <li>
+      <div class="desc">
+        <p class="tit">어른 <span class="num">1</span>명</p>
+        <div class="txt">만 13세 이상</div>
+      </div>
+      <div class="right">
+        <div class="inp-num-type2" data-evt="inp-number">
+          <button type="button" class="btn down" title="감소"></button>
+          <input type="number" value="1" class="num">
+          <button type="button" class="btn up" title="증가"></button>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="desc">
+        <p class="tit">어린이 <span class="num">0</span>명</p>
+        <div class="txt">만 6세~12세</div>
+      </div>
+      <div class="right">
+        <div class="inp-num-type2" data-evt="inp-number">
+          <button type="button" class="btn down" title="감소"></button>
+          <input type="number" value="0" class="num">
+          <button type="button" class="btn up" title="증가"></button>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="desc">
+        <p class="tit">경로 <span class="num">0</span>명</p>
+        <div class="txt">만 65세 이상</div>
+      </div>
+      <div class="right">
+        <div class="inp-num-type2" data-evt="inp-number">
+          <button type="button" class="btn down" title="감소"></button>
+          <input type="number" value="0" class="num">
+          <button type="button" class="btn up" title="증가"></button>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="desc">
+        <p class="tit">중증장애인 <span class="num">0</span>명</p>
+        <div class="txt">장애 1급~3급</div>
+      </div>
+      <div class="right">
+        <div class="inp-num-type2" data-evt="inp-number">
+          <button type="button" class="btn down" title="감소"></button>
+          <input type="number" value="0" class="num">
+          <button type="button" class="btn up" title="증가"></button>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="desc">
+        <p class="tit">경증장애인 <span class="num">0</span>명</p>
+        <div class="txt">장애 4급~6급</div>
+      </div>
+      <div class="right">
+        <div class="inp-num-type2" data-evt="inp-number">
+          <button type="button" class="btn down" title="감소"></button>
+          <input type="number" value="0" class="num">
+          <button type="button" class="btn up" title="증가"></button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- // list-passenger -->
+
+<script>
+  let totalNum = 0;
+  let totalTxt = [];
+  let setTotalTxt = (target)=>{
+        totalTxt = $.map($('.list-passenger li .tit'), function(el){
+            let zero = $(el).find('.num').text() === '0'
+            if(!zero){
+              return $(el).text()
+            }
+          }).toString().replaceAll(',', ', ').replaceAll('장애인', '');
+
+          $(target).text(totalTxt);
+      }
+  let setTotalNum = (target)=>{
+        totalNum = $.map($('.list-passenger li .tit .num'), function(el){
+        return parseInt($(el).text())
+        }).reduce(function add(sum, currValue) {
+          return sum + currValue;
+        }, 0);
+
+        $(target).text(totalNum);
+      }
+        
+
+  $('.list-passenger [data-evt="inp-number"] .btn').off();
+  $('.list-passenger [data-evt="inp-number"] .btn').on('click', function(){
+    let $btn = $(this);
+    let $wrap = $(this).parents('li');
+    let $num = $wrap.find('.num');
+    let $input = $wrap.find('input');
+  
+    setTimeout(function(){
+      $num.text($input.val())
+
+      setTotalTxt('[data-id="txt-passenger"]');
+      setTotalNum('#total-passenger');
+
+      // min
+      if($btn.hasClass('down')){
+        if(totalNum <= 0) {
+          alertOpen('승차인원은 최소 1명 선택 필수입니다.', ['확인'], resetPassenger);
+          return
+        }
+        if(totalNum <= 8) {
+          $('[data-evt="inp-number"] .btn.up').removeAttr('disabled');
+        }
+      }
+
+      // max
+      if($btn.hasClass('up') && totalNum >= 9) {
+        alertOpen('승차인원은 9명까지 선택 가능합니다.', ['확인']);
+        $('[data-evt="inp-number"] .btn.up').attr('disabled', 'disabled');
+      }      
+    }, 10);
+  });
+
+
+  function setPassenger(array){
+    $('.inp-num-type2 .num').each(function(i){
+      let $inp = $(this);
+      let $num =  $inp.parents('li').find('.desc .tit .num');
+      
+      $inp.val(array[i]);
+      $num.text(array[i]);
+
+      if($inp.val() > 0){
+        $inp.prev('.down').removeAttr('disabled');
+      }else{
+        $inp.prev('.down').attr('disabled', 'disbled');
+      }
+    });
+    setTotalTxt('[data-id="txt-passenger"]');
+    setTotalNum('#total-passenger');
+  }
+
+  function resetPassenger(){
+    totalNum = 0;
+    totalTxt= [];
+
+    $('.list-passenger li .tit .num').text('0')
+    $('[data-evt="inp-number"] input').val(0);
+    $('[data-evt="inp-number"] .btn.down').addClass('disabled');
+    $('[data-evt="inp-number"] .btn.up').removeAttr('disabled');    
+    $('#total-passenger').text(1);
+    
+    //어른 1나 설정
+    setPassenger([1,0,0,0,0]);
+    // $('[data-id="txt-passenger"]').text('어른 1명');
+    // $('#passenger-basic .num').text('1');
+    // $('#passenger-basic input').val(1);
+    // $('#passenger-basic .btn').removeClass('disabled')
+    
+  }
+
+  // setPassenger([1,2,3,5,5]);
+
+  countInput('[data-evt*="inp-number"]', false);
+</script>

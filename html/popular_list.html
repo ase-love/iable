@@ -1,0 +1,110 @@
+        <!-- tple-travel-product -->
+        <div class="tple-travel-product">
+          <div class="search-wrap">
+            <div class="left">
+              <div class="inp-search">
+                <input type="text" placeholder="스토어 검색">
+                <button class="btn"><i class="ico-search"></i></button>
+              </div>
+            </div>
+            <div class="right">
+              <script>
+                const inquiryOption = [
+                  {
+                    value: '1',
+                    option: '판매순',
+                    disabled: false
+                  },
+                  {
+                    value: '2',
+                    option: '인기순',
+                    disabled: false
+                  },
+                  {
+                    value: '3',
+                    option: '낮은 가격순',
+                    disabled: false
+                  },
+                  {
+                    value: '4',
+                    option: '높은 가격순',
+                    disabled: false
+                  }
+                ]
+              </script>               
+              <div class="btn-select-wrap">
+                <button type="button" class="btn-select" onclick="selectOpen('select1', inquiryOption, function(val, text){ console.log(val);})"><span>인기순</span> <i class="ico-arr-select"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-type2 top-sticky brt" data-top="95">
+            <ul>
+              <li class="on"><a href="javascript:void(0);">전체</a></li>
+              <li><a href="javascript:void(0);">서울</a></li>
+              <li><a href="javascript:void(0);">부산</a></li>
+              <li><a href="javascript:void(0);">대구</a></li>
+            </ul>
+          </div>
+  
+          <div class="product-list">
+            <ul>
+              <!-- 여행상품 -->
+              <li>
+                <a href="3-1-1.trip_detail.html" class="product-type3">
+                  <button class="btn-favorite"><i class="ico-heart"></i></button>
+                  <div class="img">
+                    <img src="../images/temp/temp-product3.jpg" alt="">
+                  </div>
+                  <div class="desc">
+                    <span class="label"><i class="ico-mapidx"></i><span>서울/수서역</span></span>
+                    <span class="tit fixed-line2 ">부산 아쿠아리움 입장권 아쿠아리움 (2줄까지) 부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)</span>
+                    <span class="account">
+                      <div class="price-org">44,000</div>
+                      <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                      <span class="price">40,000<span class="won">원</span></span>
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <!-- 쿠폰상품 -->
+              <li>
+                <a href="3-1-1.trip_detail.html" class="product-type3">
+                  <button class="btn-favorite"><i class="ico-heart"></i></button>
+                  <div class="img img-prd">
+                    <img src="../images/temp/temp-product.png" alt="">
+                  </div>
+                  <div class="desc">
+                    <span class="label"><i class="ico-mapidx"></i><span>서울/수서역</span></span>
+                    <span class="tit fixed-line2 ">부산 아쿠아리움 입장권 아쿠아리움 (2줄까지) 부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)</span>
+                    <span class="account">
+                      <div class="price-org">44,000</div>
+                      <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                      <span class="price">40,000<span class="won">원</span></span>
+                    </span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="btn-more-wrap">
+            <button type="button" class="btn-more"><span>더보기</span><i class="ico-arr-more"></i></button>
+          </div>
+        </div>
+        <!-- // tple-travel-product -->
+
+        <script>
+            let prdHtml = $('.product-list ul li:nth-child(1)').prop("outerHTML");
+
+            //여행상세 E쿠폰일경우
+            if(location.href.match('#ecoupon')){
+              prdHtml = $('.product-list ul li:nth-child(2)').prop("outerHTML");
+              $('.tab-type2.top-sticky').remove();
+            }
+
+            $('.product-list ul').html('');
+            for(let i=0;i<=10;i++){
+              $('.product-list ul').append(prdHtml);
+            }
+            icon();
+        </script>
