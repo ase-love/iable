@@ -60,8 +60,21 @@
       <!-- 이벤트 템플릿-->
       <div class="event-template-wrap">
         <div class="event-visual">
-          <img src="../images/event/visual-text.png" alt="" class="text">
-          <video playsinline autoplay="autoplay" loop muted type="video/mp4" preload src="../images/event/event.mp4"></video>        
+          <div class="slider">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../images/event/visual-text.png" alt="" class="text">
+                  <video playsinline autoplay="autoplay" loop muted type="video/mp4" preload src="../images/event/event.mp4"></video>
+                </div>
+                <div class="swiper-slide">
+                  <img src="../images/event/visual-text.png" alt="" class="text">
+                  <video playsinline autoplay="autoplay" loop muted type="video/mp4" preload src="../images/event/event.mp4"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
                 
         <ul class="event-step-list">
@@ -286,6 +299,20 @@
 <!-- // wrap -->
 
 
+<script>
+    //슬라이더
+    swiper = new Swiper(".event-visual .swiper-container", {
+      loop: true,
+      autoplay: {
+        delay: 3500,
+      },    
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+  });
+
+</script>
 
 </body>
 </html>

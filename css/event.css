@@ -11,8 +11,12 @@
 .event-header .date{display:block; font-size:14px; font-weight:300;margin-top:8px; color:#1F2125;}
 
 .event-visual{position:relative; width:calc(100% + 40px);margin-left:-20px;margin-top:20px;}
-.event-visual video{width: 100%;}
+.event-visual video{width: 100%;vertical-align: top;}
 .event-visual .text{position:absolute;top:0;right:0;height:100%;width:auto;z-index: 1;}
+.event-visual .slider{overflow:hidden;width:100%;}
+.event-visual .swiper-pagination {position:relative;margin-top:15px;}
+.event-visual .swiper-pagination .swiper-pagination-bullet{background:#9696b2;opacity: 1;}
+.event-visual .swiper-pagination .swiper-pagination-bullet-active{background:#7030a0 !important;}
 
 .event-template-wrap{line-height:1.4;}
 .event-template-wrap .visual{width:calc(100% + 40px);margin-left:-20px;}
