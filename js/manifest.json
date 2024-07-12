@@ -1,0 +1,35 @@
+{
+	"short_name": "SRT Play",
+	"name": "SRT Play",
+	"description": "여행의 즐거움! SRT Play",
+	"icons": [
+		{
+			"src": "/assets/images/favicon/favicon-32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/assets/images/favicon/favicon-57.png",
+			"sizes": "57x57",
+			"type": "image/png"
+		},
+		{
+			"src": "/assets/images/favicon/favicon-72.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "/assets/images/favicon/favicon-152.png",
+			"sizes": "152x152",
+			"type": "image/png"
+		},
+		{
+			"src": "/assets/images/favicon/favicon-280.png",
+			"sizes": "280x280",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"scope": "/"
+}

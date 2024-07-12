@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<script src="js/jquery-3.6.1.min.js"></script>
+
+</head>
+<!-- style -->
+<style type="text/css">
+  *{margin:0;padding:0;}
+  body {padding:20px; font-family:Tahoma, Sans-Serif; color:#333; font-size:11px; background-color:#fff;}
+  h1 {color:#000; letter-spacing:-2px;}
+  h2 {margin-top:20px;padding-left:10px;letter-spacing:-2px;position:relative;font-size:18px;}
+  h2:before{content:'';display:block;position:absolute;top:50%;left:0;width:5px;height:5px;background:#333;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+  .currentsite {display:block; position:absolute; right:40px; top:20px;}
+  .mwork table {width:100%; border-collapse:collapse; border:0px solid #666;margin-top:10px;}
+  .mwork caption {text-align:left; font-size:200%; color:#999;}
+  .mwork th {padding:6px; border:1px solid #fff; color:#fff; font-size:110%; background-color:#1F5DBE;}
+  .mwork td {height:16px; padding:4px; padding-left:10px; border:1px solid #666;}
+  .mwork a,
+  .mwork a:link, #mwork a:visited {color:#009; text-decoration:none;}
+  .mwork a:hover, #mwork a:active {color:#00f; text-decoration:underline;}
+  .mwork td:hover {background-color:#ddd !important;}
+  
+  .mwork col:nth-child(5),
+  .mwork th:nth-child(5),
+  .mwork td:nth-child(5){display:none;}
+  .mwork col:nth-child(6),
+  .mwork th:nth-child(6),
+  .mwork td:nth-child(6){display:none;}
+  .mwork col:nth-child(7),
+  .mwork th:nth-child(7),
+  .mwork td:nth-child(7){display:none;}
+
+
+  .classname{display:none;}
+  .down{font-size:15px;margin-left:50px;}
+
+  .modify{position:relative;color: #ff0000;}
+  .modify .layer{display:none;position: absolute;top:0;right:0;padding:15px;color:#333;white-space:pre-line;width:500px;height:300px;overflow: hidden;overflow-y:auto;background:#fff;z-index:50;}
+  .modify .layer xmp{white-space:pre-line;}
+  .modify:hover .layer{display:block;}
+
+  .title td{background:#eee;}
+  .sub-title td:nth-child(2){padding-left:20px;}
+  .page td:nth-child(2){padding-left:40px;}
+  .popup td:nth-child(2){padding-left:40px;}
+  .error td:nth-child(2){padding-left:40px;}
+
+  .delete{text-decoration:line-through;}
+  .notice{padding:5px 0;font-size: 13px;padding-left:20px;margin-top:15px;background:url('data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAQAAAAngNWGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQflCwsSBQBIWRXaAAAA7klEQVQoz43STUpCYRjF8Z+vcmncqLKhO8iCaNoCrqCtogZFeLegOahJm+iS2jxaQRE0dqi4hgSpgfj9eUYP5/1zeHjek6mZKBKLnTsy0PWt5c1g/JiZgCUPCubVkWiOxgCy6ppLGAWv6rKQvYSaqnW6sOd9lFjegEFVmSDyOO8nkkX0SRRUHNumvKuceNGtr0Lj4HRrHhSDg0VvxY4chuntNyvo78T1g5+dwM+gvRPYDlLdrVhPmjNw52XWXXHHW78BqcbGvIZ03J4P+87WYM/u/Y37OHSjrLMEdVRcGzLbcCIVJSfy6PnSkk6/4x+rojPgRremOAAAAABJRU5ErkJggg==') no-repeat 0 7px;background-size:auto 15px;}
+  .notice ~ .notice{margin-top:0;}
+
+  .delete td{opacity: 0.5;}
+  .delete *{text-decoration: line-through;}
+
+</style>
+<!-- //style -->
+<!-- html body -->
+<script>
+  $(function(){
+    let data =[
+
+      //공통 
+      ["공통", "title", "", ""],
+      ["", "로딩", "", "", "", "", "", "html/loading", "", "", ""],
+      ["", "팝업1", "", "", "", "", "", "html/popup-noti", "", "", ""],
+      ["", "팝업2", "이미지형", "", "", "", "", "html/popup-noti2", "", "", ""],
+      ["", "임시점검페이지(단독)", "", "", "", "", "", "error", "", "", ""],
+      ["", "임시점검페이지", "", "", "", "", "", "html/error", "", "", ""],
+      ["", "페이지없음", "", "", "", "", "", "html/error2", "", "", ""],
+      ["", "서비스지연", "", "", "", "", "", "html/error3", "", "", ""],
+      ["", "이용정보 약관", "", "", "", "", "", "html/service", "", "", ""],
+      ["", "개인정보 약관", "", "", "", "", "", "html/privacy", "", "", ""],
+      ["", "70%할인안내페이지", "", "", "", "", "", "html/70discount/index", "", "", ""],
+      ["", "로그인전 gnb", "", "", "", "", "", "html/gnbmenu_login", "", "", ""],
+      ["", "로그인후 gnb", "", "", "", "", "", "html/gnbmenu_login#login", "", "", ""],
+      //메인 
+      ["메인", "title", "", ""],
+      ["", "메인", "", "", "", "", "", "html/main", "", "", "메뉴"],
+      ["", "가이드", "반려동물 동반 탑승 이용 안내", "", "", "", "", "html/guide_pet_with_srt", "", "", ""],
+      ["", "", "SRT 좌석 선택 꿀팁", "", "", "", "", "html/guide_seat_recommend", "", "", ""],
+      //승차권 
+      ["승차권", "title", "", ""],
+      ["", "예매홈", "", "", "", "", "", "html/1-1.book_home", "", "", "달력, 지도"],
+      ["", "승차권조회", "", "", "", "", "", "html/1-2.find_train", "", "", "로딩"],
+      ["", "", "데이터없음", "", "", "", "", "html/1-2.find_train#nodata", "", "", ""],
+      ["", "좌석선택", "특실", "", "", "", "", "html/1-4.seat_select_special", "", "", "로딩"],
+      ["", "", "일반실", "", "", "", "", "html/1-4.seat_select_normal", "", "", "로딩"],
+      ["", "결합상품선택", "", "", "", "", "", "html/1-5.goods_select", "", "", ""],
+      ["", "예약확인", "결합", "", "", "", "", "html/1-6.book_confirm", "", "", ""],
+      ["", "", "일반", "", "", "", "", "html/1-6.book_confirm_normal", "", "", ""],
+      ["", "결제하기", "할인", "", "", "", "", "html/1-7.sale_payment", "", "", ""],
+      ["", "", "오류", "", "", "", "", "html/1-7-1.payment_error", "", "", ""],
+      ["", "", "일반", "", "", "", "", "html/1-8.payment", "", "", ""],
+      ["", "", "", "(모바일금액권)", "", "", "", "html/1-8.payment_srtcard", "", "", ""],
+      ["", "", "지불", "", "", "", "", "html/1-8-1.payment_money", "", "", ""],
+      ["", "발권완료", "", "", "", "", "", "html/1-9.completed", "", "", ""],
+      ["", "SR계정연동", "", "", "", "", "", "html/1-10.sr_link", "", "", ""],
+      ["", "", "연동", "", "", "", "", "html/1-10.sr_link2", "", "", ""], 
+      ["", "", "완료", "", "", "", "", "html/1-10-1.sr_link_completed", "", "", ""],
+      ["", "", "오류", "", "", "", "", "html/1-10-2.sr_link_error", "", "", ""],
+      //시간표 
+      ["시간표", "title", "", ""],
+      ["", "시간표 조회", "", "", "", "", "", "html/2.schedules", "", "", "지도"],
+      //티플여행 (1차)
+      ["티플여행(1차)", "title", "", ""],
+      ["", "티플여행 메인", "", "", "", "", "", "html/3.tiple_main_1", "", "", "메뉴"],
+      ["", "티플여행", "레저", "", "", "", "", "html/3-1.trip#train", "", "", ""],
+      ["", "", "호텔", "", "", "", "", "html/3-1.trip#hotel", "", "", "3-2.hotel"],
+      ["", "", "공연전시", "", "", "", "", "html/3-1.trip#show", "", "", "3-3.show"],
+      ["", "", "E쿠폰", "", "", "", "", "html/3-1.trip#ecoupon", "", "", "3-4.ecoupon"],
+      ["", "여행상세", "", "", "", "", "", "html/3-1-1.trip_detail", "", "", ""],
+      ["", "E쿠폰상세", "", "", "", "", "", "html/3-1-1.trip_detail#ecoupon", "", "", ""],
+      ["", "매거진", "목록", "", "", "", "", "html/3-6.magagine", "", "", ""],
+      ["", "", "상세", "", "", "", "", "html/3-6-1.magagine_detail", "", "", ""],
+      ["", "여행 카운슬러 추천", "목록 ", "", "", "", "", "html/3-7.counselor", "", "", ""],
+      ["", "", "상세 ", "", "", "", "", "html/3-7-1.counselor_detail", "", "", ""],
+      ["", "결제하기(티플)", " ", "", "", "", "", "html/3-9.tiple_payment", "", "", ""],
+      ["", "", "E쿠폰", "", "", "", "", "html/3-9.tiple_payment_ecoupon", "", "", ""],
+      ["", "", "완료", "", "", "", "", "html/3-9.tp_completed", "", "", ""],
+      ["", "", "오류", "", "", "", "", "html/3-9-1.tp_payment_error", "", "", ""],
+      ["", "인기여행상품(전체)", " ", "", "", "", "", "html/3-10.popular_list", "", "", ""],
+      ["", "선물완료", "", "", "", "", "", "html/3-10-2.gift_completed", "", "", ""],
+      ["", "티플상점메인", " ", "", "", "", "", "html/10-1.tiple_shop_main", "", "", ""], 
+      //여행
+      ["여행", "title", "", ""],
+      ["", "여행 메인", "", "", "", "", "", "html/3.travel_main", "", "", ""],      
+      ["", "여행 상세", "", "", "", "", "", "html/3.travel_detail", "", "", ""],      
+      ["", "여행 상세2", "", "", "", "", "", "html/3.travel_detail2", "", "", ""],      
+      ["", "여행 상세3", "", "", "", "", "", "html/3.travel_detail3", "", "", ""],      
+      ["", "선물하기 메인", "", "", "", "", "", "html/3.gift_main", "", "", ""],      
+      ["", "선물하기 상세", "", "", "", "", "", "html/3.gift_detail", "", "", ""],      
+      ["", "선물하기 상세2", "", "", "", "", "", "html/3.gift_detail2", "", "", ""],      
+      //티플여행 (2차)
+      // ["티플여행(2차)", "title", "", ""],
+      // ["", "티플여행 메인", "", "", "", "", "", "html/3.tiple_main_2", "", "", "메뉴"],
+      // ["", "티플여행", "e-쿠폰", "", "", "", "", "html/3-4.ecoupon", "", "", ""],
+      // ["", "인기여행지", "", "", "", "", "", "html/3-5.popular", "", "", ""],      
+      //마이페이지
+      ["마이페이지", "title", "", ""],
+      ["", "마이페이지 메인", "", "", "", "", "", "html/4.my_main", "", "", "메뉴"],
+      ["", "", "로그인후", "", "", "", "", "html/4.my_main#login", "", "", "메뉴"],
+      ["", "내 정보 관리", "", "", "", "", "", "html/4-1.my_profile", "", "", ""],
+      ["", "", "이름변경", "", "", "", "", "html/4-1-1.profile_name", "", "", ""],
+      ["", "", "비밀번호변경", "", "", "", "", "html/4-1-2.profile_pwd", "", "", ""],
+      ["", "", "휴대폰변경", "", "", "", "", "html/4-1-3.profile_phone", "", "", ""],
+      ["", "", "회원탈퇴", "", "", "", "", "html/4-1-4.delete_account", "", "", ""],
+      ["", "보관함", "", "", "", "", "", "html/4-2.storage_box", "", "", ""],
+      ["", "", "할인승차권", "", "", "", "", "html/4-2-1.sale_ticket", "", "", ""],
+      ["", "", "일반승차권", "", "", "", "", "html/4-2-2.ticket", "", "", ""],
+      ["", "", "환불대상 선택", "", "", "", "", "html/4-2-3.refund", "", "", ""],
+      ["", "", "티플상품상세", "", "", "", "", "html/4-2-4.product_detail_1", "", "", ""],
+      ["", "", "티플상품상세2", "", "", "", "", "html/4-2-4.product_detail_2", "", "", ""],
+      ["", "구매내역", "", "", "", "", "", "html/4-3.purchase_list", "", "", "달력"], 
+      ["", "", "영수증", "", "", "", "", "html/4-3-1.receipt", "", "", ""], 
+      ["", "", "현금영수증", "", "", "", "", "html/4-3-2.cash-receipt", "", "", ""], 
+      ["", "설정", "", "", "", "", "", "html/4-4.setting", "", "", "지도"], 
+      ["", "고객센터", "공지사항", "", "", "", "", "html/4-5.notice", "", "", ""],
+      ["", "", "자주묻는질문", "", "", "", "", "html/4-6.faq", "", "", ""],
+      ["", "", "1:1문의", "", "", "", "", "html/4-7.write_us", "", "", ""],
+      ["", "", "1:1문의_문의내역", "", "", "", "", "html/4-8.inquiry", "", "", ""],      
+      //위시리스트
+      ["위시리스트", "title", "", ""],      
+      ["", "위시리스트", "", "", "", "", "", "html/5.wish_list", "", "", ""],
+      //모바일금액권
+      ["모바일금액권", "title", "", ""],      
+      ["", "모바일금액권 메인", "", "", "", "", "", "html/5-1.srtcard", "", "", ""],
+      ["", " 모바일금액권 메인(신규)", "", "", "", "", "", "html/5-1.srtcard2", "", "", ""],
+      ["", "", "상세", "", "", "", "", "html/5-1-1.trip_detail", "", "", ""],
+      ["", "번호확인", "", "", "", "", "", "html/5-2-1.gift_check1", "", "", ""],
+      ["", "주문정보 확인", "", "", "", "", "", "html/5-2-2.gift_check2", "", "", ""],
+      ["", "결제정보 확인", "", "", "", "", "", "html/5-3.payment-info-check", "", "", ""],
+      ["", "환불하기", "", "", "", "", "", "html/5-4.payment-refund", "", "", ""],
+      //로그인
+      ["로그인", "title", "", ""],
+      ["", "로그인메인", "", "", "", "", "", "html/8.login_main", "", "", ""],
+      ["", "아이디확인", "", "", "", "", "", "html/8-1.id_check", "", "", ""],
+      ["", "", "아이디찾기", "", "", "", "", "html/8-1-1.id_search", "", "", ""],
+      ["", "", "아이디찾기완료", "", "", "", "", "html/8-1-2.id_search2", "", "", ""],
+      ["", "", "계정전환", "", "", "", "", "html/8-1-3.id_translation", "", "", ""],
+      ["", "", "계정없음", "", "", "", "", "html/8-1-4.id_none_members", "", "", ""],
+      ["", "", "불일치", "", "", "", "", "html/8-1-5.inconsistency", "", "", ""],
+      ["", "로그인", "", "", "", "", "", "html/8-2.login", "", "", ""],
+      ["", "", "인증", "", "", "", "", "html/8-2-1.authentication", "", "", ""],
+      ["", "", "비밀번호재설정", "", "", "", "", "html/8-2-2.set_pwd", "", "", ""],
+      ["", "", "휴면계정", "", "", "", "", "html/8-2-3.dormant", "", "", ""],
+      //회원가입
+      ["회원가입", "title", "", ""],      
+      ["", "회원가입", "", "", "", "", "", "html/9.join", "", "", ""],
+      ["", "", "비밀번호", "", "", "", "", "html/9-1.join-pwd", "", "", ""],
+      ["", "", "인증", "", "", "", "", "html/9-2.join_authentication", "", "", ""],
+      ["", "", "가입된번호", "", "", "", "", "html/9-2.join_error", "", "", ""],
+      ["", "", "이름", "", "", "", "", "html/9-3.join_name", "", "", ""],
+      ["", "", "완료", "", "", "", "", "html/9-4.join_success", "", "", ""],      
+      //이벤트
+      ["이벤트", "title", "", ""],      
+      ["", "이벤트 리스트", "", "", "", "", "", "html/6.event_list", "", "", ""],      
+      ["", "이벤트 상세", "", "", "", "", "", "html/6-1.event_detail", "", "", ""],      
+      ["", "", "종료", "", "", "", "", "html/6-1.event_detail#end", "", "", ""],      
+      ["", "당첨자발표", "", "", "", "", "", "html/6-3.event_notice", "", "", ""],      
+      ["", "이벤트템플릿", "", "", "", "", "", "html/event_template", "", "", "삭제"],      
+      ["", "이벤트템플릿2", "", "", "", "", "", "html/event_template2", "", "", ""],      
+    ]
+
+    for(var i = 0 ; i<= data.length -1 ; i++){
+      if(data[i][1] == 'title'){
+        $('tbody').append('<tr class="title">'+
+          '<td>'+data[i][0]+'</td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>')
+      }else{
+        function link(i){
+          if(data[i][7].match('#')){
+            return data[i][7].split('#')[0]+'.html#'+data[i][7].split('#')[1]
+          }else{
+            return data[i][7]+'.html'
+          }
+          
+        }
+
+        $('tbody').append('<tr>'+
+          '<td>'+data[i][0]+'</td>' +
+          '<td>'+data[i][1]+'</td>' +
+          '<td>'+data[i][2]+'</td>' +
+          '<td>'+data[i][3]+'</td>' +
+          '<td>'+data[i][4]+'</td>' +
+          '<td>'+data[i][5]+'</td>' +
+          '<td>'+data[i][6]+'</td>' +
+          '<td><a href="'+link(i)+'">'+data[i][7]+'</a></td>' +
+          '<td>'+data[i][8]+'</td>' +
+          '<td>'+data[i][9]+'</td>' +
+          '<td>'+data[i][10]+'</td>' +
+        '</tr>')
+      }
+    }
+  });
+
+  $(function(){
+    $('td').each(function(){
+      if($(this).text().includes('삭제')){
+        $(this).parents('tr').addClass('delete')
+      }
+    });
+  })
+
+</script>
+</head>
+<body>
+<!-- sheet -->
+<h1>SRT Publishing Work Sheet</h1>
+
+<div class="mwork">
+  <table>
+    <colgroup>
+			<col style="width:100px" />
+			<col style="width:140px" />
+			<col style="width:160px" />
+			<col style="width:140px" />
+			<col style="width:140px" />
+			<col style="width:110px" />
+			<col style="width:80px" />
+			<col style="width:250px" />
+			<col style="width:90px" />
+			<col style="width:90px" />
+			<col style="width:auto" />
+    </colgroup>
+
+    <thead>
+      <tr>
+				<th>Category</th>
+				<th>1Depth</th>
+				<th>2Depth</th>
+				<th>3Depth</th>
+				<th>4Depth</th>
+				<th>화면명</th>
+				<th>구분</th>
+				<th>FileName/Link</th>
+				<th>완료</th>
+				<th>수정</th>
+				<th>Memo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- //sheet -->
+
+</body>
+</html>
