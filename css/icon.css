@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+/* icon */
+[class*=ico-]{display:inline-block;background-size:100% 100% !important;vertical-align: middle;}
+[class*=ico-] svg{width:100%;height:100%;vertical-align:top;}
+[class*=ico-] svg image{width:100%;height:100%;vertical-align:top;}
+
+.ico-logo{width:100px;height:27px;}
+.text-login-intro .logo .ico-logo{width:100px;height:27px;}
+
+.ico-gnb-smile{width:22px;height:22px;}
+.ico-gnb-travel{width:17px;height:26px;}
+.ico-gnb-hotel{width:21px;height:26px;}
+.ico-gnb-show{width:25px;height:23px;}
+.ico-gnb-e-coupon{width:22px;height:17px;} 
+.ico-gnb-alarm{width:20px;height:21px;}
+.ico-gnb-list{width:22px;height:20px;}
+.ico-gnb-balloon-pen{width:22px;height:22px;}
+.ico-gnb-section{width:22px;height:22px;}
+.ico-gnb-join{width:22px;height:21px;}
+.ico-gnb-logout{width:22px;height:20px;}
+
+.ico-back{width:18px;height:19px;}
+.ico-close{width:18px;height:18px;}
+.ico-close2{width:18px;height:18px;}
+.ico-cacao{width:22px;height:22px;}
+.ico-train-srt{width:26px;height:14px;}
+.ico-train-srt2{width:22px;height:16px;}
+.ico-val-check{width:18px;height:18px;}
+.ico-val-view,
+.ico-val-view-off{width:18px;height:18px;}
+
+.ico-arr-right{width:15px;height:15px;}
+.ico-arr-right2{width:20px;height:20px;}
+.ico-arr-right3{width:9px;height:10px;}
+.ico-arr-link{width:10px;height:17px;}
+.ico-arr-list{width:15px;height:8px;}
+.ico-arr-more{width:9px;height:14px;}
+.ico-arr-circle{width:15px;height:15px;}
+.ico-arr-select{width:10px;height:10px;}
+.ico-arr-select2{width:14px;height:8px;}
+.ico-arr-open{width:12px;height:6px;}
+
+/* .ico-footer-instagram {width:35px;height:35px;}
+.ico-footer-kakao {width:35px;height:33px;}
+.ico-footer-youtube {width:35px;height:24px;}
+.ico-footer-blog {width:35px;height:31px;} */
+
+.ico-footer-instagram {width:30px;height:30px;}
+.ico-footer-kakao {width:30px;height:28px;} 
+.ico-footer-youtube {width:30px;height:21px;} 
+.ico-footer-blog {width:30px;height:26px;}
+
+.ico-sns-instagram {width:30px;height:30px;}
+.ico-sns-kakao {width:30px;height:28px;} 
+.ico-sns-youtube {width:30px;height:21px;} 
+.ico-sns-blog {width:30px;height:26px;}
+
+.ico-check-error{width:15px;height:11px;}
+.ico-check{width:20px;height:15px;}
+.ico-check2{width:18px;height:18px;}
+
+.ico-close-pop{width:20px;height:20px;}
+.ico-noti{width:13px;height:13px;}
+.ico-noti2{width:15px;height:13px;}
+.ico-question{width:16px;height:16px;}
+.ico-home{width:19px;height:19px;}
+.ico-cart{width:19px;height:19px;}
+.ico-menu{width:24px;height:18px;}
+.ico-warning{width:16px;height:18px;}
+.ico-prd-menu{width:20px;height:4px;}
+.ico-sale-dowm{width:7px;height:11px;}
+.ico-plus{width:20px;height:20px;}
+.ico-plus2{width:14px;height:14px;}
+.ico-download{width:23px;height:20px;}
+.ico-no-product{width:45px;height:45px;}
+.ico-speak{width:14px;height:14px;}
+.ico-waygo{width:30px;height:10px;}
+.ico-waygo2{width:13px;height:11px;}
+.ico-cal-time{width:18px;height:18px;}
+.ico-seat-person{width:18px;height:18px;}
+.ico-money {width:17px;height:17px;}
+.ico-sale {width:17px;height:17px;}
+.ico-ticket {width:20px;height:18px;}
+.ico-receipt {width:17px;height:17px;}
+.ico-srtplay {width:45px;height:12px;}
+.ico-del {width:14px;height:14px;}
+.ico-cal {width:16px;height:16px;}
+.ico-cal-prev {width:20px;height:17px;}
+.ico-cal-next {width:20px;height:17px;}
+.ico-set {width:13px;height:13px;}
+.ico-stroage-ticket {width:35px;height:26px;}
+.ico-stroage-coupon {width:35px;height:26px;}
+.ico-stroage-favorite {width:30px;height:30px;}
+.ico-sale-ticket {width:24px;height:22px;}
+.ico-normal-ticket {width:24px;height:22px;}
+.ico-srt-coupon {width:25px;height:19px;}
+.ico-exchantge {width:25px;height:25px;}
+.ico-help-noti {width:23px;height:24px;}
+.ico-help-list {width:25px;height:22px;}
+.ico-help-pen {width:25px;height:25px;}
+.ico-train {width:22px;height:27px;}
+.ico-train2 {width:27px;height:33px;}
+.ico-reserve {width:25px;height:23px;}
+.ico-person {width:22px;height:25px;}
+.ico-exchagne {width:19px;height:17px;}
+.ico-plus-more{width:17px;height:17px;}
+.ico-search{width:17px;height:18px;}
+.ico-map-station{width:30px;height:30px;}
+.ico-sale-down{width:8px;height:12px;}
+.ico-toilet{width:30px;height:30px;}
+.ico-bathchair{width:25px;height:25px;}
+.ico-bathchair-sm{width:21px;height:21px;}
+.ico-electric{width:18px;height:18px;}
+.ico-favorite{width:24px;height:21px;}
+.ico-compine{width:20px;height:19px;}
+.ico-noti-balloon{width:45px;height:44px;}
+.ico-call{width:36px;height:36px;}
+.ico-issue-srt{width:72px;height:76px;}
+.ico-time{width:30px;height:30px;}
+.ico-sale-coupon{width:35px;height:26px;}
+.ico-ticket-srt{width:33px;height:33px;}
+.ico-ticket-srt2{width:36px;height:27px;}
+.ico-down{width:6px;height:10px;}
+.ico-delete{width:24px;height:24px;}
+.ico-play-start{width:10px;height:11px;}
+.ico-play-stop{width:10px;height:11px;}
+.ico-more-view{width:16px;height:15px;}
+.ico-mapidx{width:9px;height:12px;}
+.ico-movie-play{width:70px;height:43px;}
+.ico-cate-srt {width:39px;height:39px;}
+.ico-cate-times {width:39px;height:39px;}
+.ico-cate-trip {width:39px;height:39px;}
+.ico-cate-market {width:39px;height:39px;}
+.ico-cate-giftcard2 {width:39px;height:39px;}
+
+.ico-cate-time {width:29px;height:29px;}
+.ico-cate-travel {width:23px;height:35px;}
+.ico-cate-hotel {width:29px;height:35px;}
+.ico-cate-show {width:33px;height:32px;}
+.ico-cate-ecoupon {width:33px;height:31px;}
+.ico-cate-coupon {width:35px;height:26px;}
+.ico-cate-ticket {width:35px;height:26px;}
+.ico-cate-noti {width:30px;height: 26px;}
+.ico-cate-faq {width:30px;height: 30px;}
+.ico-cate-qna{width:30px;height:29px;}
+.ico-cate-chatbot{width:35px;height:26px;}
+.ico-cate-call{width:30px;height:26px;}
+.ico-cate-giftcard{width:36px;height:25px;}
+.ico-heart {width:14px;height:13px;}
+.ico-heart2-off {width:20px;height:17px;}
+.ico-heart2-on {width:20px;height:17px;}
+.ico-heart3-off {width:20px;height:17px;}
+.ico-heart3-on {width:20px;height:17px;}
+.ico-homeup {width:11px;height:15px;}
+.ico-smile {width:15px;height:15px;}
+.ico-wheelchair {width:12px;height:15px;}
+.ico-elec-wheelchair {width:15px;height:15px;}
+.ico-facilities-restroom{width:30px;height:30px;}
+.ico-facilities-handicap{width:31px;height:31px;}
+.ico-facilities-changing{width:26px;height:30px;}
+.ico-facilities-nursing{width:14px;height:30px;}
+.ico-facilities-emergency{width:30px;height:30px;}
+.ico-clip{width:11px;height:11px;}
+.ico-won{width:18px;height:17px;}
+.ico-iphone-home-plus{width:45px;height:30px;}
+.ico-chatbot{width:25px;height:21px;}
+.ico-chatbot2{width:32px;height:30px}
+.ico-chatbot3{width:22px;height:17px}
+.ico-myticket{width:37px;height:31px}
+.ico-gift{width:16px;height:16px}
+.ico-phone{width:16px;height:20px}
+.ico-shield{width:22px;height:23px;}
+
+.ico-gnb-tiple{width:42px;height:42px}
+.ico-gnb-ticket{width:42px;height:42px}
+.ico-gnb-giftcard{width:42px;height:42px}
+.ico-gnb-chatbot{width:42px;height:42px}
