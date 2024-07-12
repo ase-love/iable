@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="javascript:history.back();" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt hide"></span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+      <!-- mypage-wrap -->
+      <div class="mypage-wrap">
+        <!-- text-main -->
+        <div class="text-main" data-id="header-tit">
+          <h1 class="tit-type1">
+            마이티플
+          </h1>
+        </div>
+        <!-- // text-main -->
+        <!-- 로그인전 -->
+        <div class="mypage-login">
+          <span class="thumb"></span>
+          <spna class="txt">안녕하세요. 홍길동 님.</spna>
+          <div class="right"><button class="btn-login">로그인</button></div>
+        </div>
+        <!-- 로그인후 -->
+        <div class="mypage-login">
+          <span class="thumb"></span>
+          <spna class="txt">로그인이 필요합니다.</spna>
+          <div class="right"><a href="4-1.my_profile.html" class="btn-setting">내 정보 관리</a></div>
+        </div>
+
+        <!-- 배너 -->
+        <div class="banner-wrap">
+          <a href="70discount/index.html">
+            <img src="../images/banner/banner-per-sale.jpg" alt="">
+          </a>
+        </div>
+        <!-- // 배너 -->
+
+        <div class="my-info-box">
+          <div class="row">
+            <span class="label">내 연동 계정</span>
+            <div class="right">
+              <button class="btn1" disabled>SR</button>
+            </div>
+          </div>
+          <div class="row">
+            <span class="label">내 승차권<span class="sub">(*최근예정)</span></span>
+            <div class="right">
+              <button class="btn2" disabled>확인</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-info-box">
+          <div class="row">
+            <span class="label">내 연동 계정</span>
+            <div class="right">
+              <button class="btn1">SR</button>
+            </div>
+          </div>
+          <div class="row">
+            <span class="label">SR 계정 연동이 필요해요.</span>
+            <div class="right">
+              <button class="btn2">SR 연동<i class="ico-arr-right3"></i></button>
+            </div>
+          </div>
+          <div class="row">
+            <span class="label">내 승차권<span class="sub">(*최근예정)</span></span>
+            <div class="right">
+              <button class="btn2" onclick="$(this).hide();$('.marquee').show().addClass('on');">확인</button>
+              <div class="marquee"><span>평택지제-울산통도사</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-info-box">
+          <div class="row tit-row">
+            <span class="label"><b class="tit">보관함</b></span>
+            <div class="right">
+              <button class="btn2">장바구니</button>
+            </div>
+          </div>
+          <div class="row menu-row">
+            <a href="javascript:void(0);">승차권</a>
+            <a href="javascript:void(0);">모바일 금액권</a>
+            <a href="javascript:void(0);">할인쿠폰</a>
+          </div>
+          <div class="row menu-row">
+            <a href="javascript:void(0);">티플여행</a>
+          </div>
+        </div>
+
+        <div class="my-info-box">
+          <div class="row tit-row">
+            <span class="label"><b class="tit">구매내역</b></span>
+          </div>
+          <div class="row menu-row">
+            <a href="javascript:void(0);">티플승차권</a>
+            <a href="javascript:void(0);">일반승차권</a>
+            <a href="javascript:void(0);">모바일 금액권</a>
+          </div>
+          <div class="row menu-row">
+            <a href="javascript:void(0);">티플여행</a>
+          </div>          
+        </div>
+
+        <div class="my-info-box">
+          <div class="row">
+            <div class="tit-wrap">
+              <b class="tit">고객센터</b>
+              <p class="txt">SRT플레이 이용에 불편하거나 궁금함을 도와드립니다.</p>
+            </div>
+          </div>
+          <ul class="list">
+            <li><a href="javascript:void(0);">공지사항</a></li>
+            <li><a href="javascript:void(0);">자주 묻는 질문</a></li>
+            <li><a href="javascript:void(0);">1:1 문의</a></li>
+            <li><a href="javascript:void(0);"><i class="ico-chatbot3"></i>챗봇</a></li>
+          </ul>
+        </div>
+
+        <div class="my-info-box">
+          <div class="row tit-row">
+            <span class="label"><b class="tit">설정</b></span>
+          </div>
+          <ul class="list">
+            <li><a href="javascript:void(0);">배송지 등록/관리</a></li>
+          </ul>
+        </div>
+
+        <button class="my-info-box"><b class="tit">로그아웃</b></button>
+
+
+      </div>
+      <!-- // mypage-wrap -->
+  </div>
+  <!-- // content -->
+</div>
+<!-- // wrap -->
+
+<script>
+
+  //퍼블용
+  if(location.href.match('#login')){
+    $('.mypage-login').eq(0).remove();
+  }else{
+    $('.mypage-login').eq(1).remove();
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<div class="gnb-menu-wrap">
+  <div class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="logo"><i class="ico-logo"></i></a>
+      </div>
+      <div class="right">
+        <a href="javascript:void(0);" class="btn-close"><i class="ico-close2"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-body">
+    <b class="gnb-tit">전체</b>
+    <div class="quick-menu st2">
+      <ul>
+        <li>
+          <a href="javascript:void(0);">
+            <span class="tooltip-wrap">
+              <div class="icon"><i class="ico-gnb-tiple"></i></div>
+              <span class="txt">마이티플</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            <div class="icon"><i class="ico-gnb-ticket"></i></div>
+            <span class="txt">내 승차권 확인</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            <div class="icon"><i class="ico-gnb-giftcard"></i></div>
+            <span class="txt">금액권 등록</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            <div class="icon"><i class="ico-gnb-chatbot"></i></div>
+            <span class="txt">쳇봇 문의</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+    <!-- gnb-menu -->
+    <div class="gnb-menu">
+      <ul class="menu">
+        <li><a href="1-1.book_home.html"><sapn class="txt">승차권 예매</sapn></a></li>
+        <li><a href="1-2.find_train.html"><sapn class="txt">시간표 조회</sapn></a></li>
+        <li><a href="3-6.magagine.html"><sapn class="txt">오늘의 티플매거진</sapn></a></li>
+        <li><a href="3-7.counselor.html"><sapn class="txt">여행 카운슬러 추천</sapn></a></li>
+        <li><a href="3.tiple_main_1.html"><sapn class="txt">티플여행</sapn></a></li>
+        <li><a href="10-1.tiple_shop_main.html"><sapn class="txt">상생스토어</sapn></a></li>
+        <!-- <li><a href="8.login_main.html"><sapn class="txt">로그인</sapn></a></li> -->
+        <li><a href="javascript:void(0);"><sapn class="txt">로그아웃</sapn></a></li>
+      </ul>
+    </div>
+    <!-- <div class="banner">
+      <a href="javascript:void(0);"><img src="../images/banner/banner-plus-coupon.jpg" alt=""></a>
+    </div> -->
+  </div>
+</div>
+
+<script>
+  //퍼블용
+  if(location.href.includes('70discount')){
+    $('.gnb-menu-wrap a').each(function(){
+      if($(this).attr('href').includes('javascript:void')) return;
+      $(this).attr('href', '../'+$(this).attr('href'))
+    });
+  }
+
+</script>

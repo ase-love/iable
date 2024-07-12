@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+</head> 
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <div class="content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="btn-type1 st1" onclick="popOpen('#pop-noti');notiSlider()">팝업열기</button>
+  </div>
+</div>
+<!-- // wrap -->
+
+
+<div class="popup-wrap st2" id="pop-noti">
+  <div class="dim"></div>
+  <div class="pop-wrap">
+    <div class="popup">
+      <!-- 배너 -->
+      <div class="banner-wrap">
+        <div class="banner-slide-list r-st2" id="banner">
+          <div class="swiper-container">
+              <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);">
+                      <img src="../images/temp/temp-noti.jpg" alt="">
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);">
+                      <img src="../images/temp/temp-noti.jpg" alt="">
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);">
+                      <img src="../images/temp/temp-noti.jpg" alt="">
+                    </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="swiper-menu2">
+            <div class="swiper-pagination"></div>
+            <button class="play-start" style="display: none;"><i class="ico-play-start"></i></button>
+            <button class="play-stop"><i class="ico-play-stop"></i></button>              
+          </div>
+        </div>
+      </div>
+      <!-- // 배너 -->
+      <div class="pop-footer">
+        <div class="nomore">
+          <label class="inp-check st2">
+            <input type="checkbox" name="opinion">
+            <span class="ic"><i></i></span>
+            <span class="t">오늘 하루 보지않기</span>
+          </label>
+          <div class="right">
+            <button type="button" class="btn" onclick="popClose('#pop-noti')">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+  function notiSlider(){
+    slider('#banner', {
+      loop: true,
+      freeMode: false,
+      slidesPerView: 1,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },      
+      pagination: {
+        el: "#banner .swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+
+</script>
+
+</body>
+</html>

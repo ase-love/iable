@@ -1,0 +1,76 @@
+  <!-- 쿠폰 할인 적용 -->
+  <div class="btm-popup-wrap full" id="pop-sale-coupon" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">쿠폰 할인 적용</strong>
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body bg-gray">
+          <div class="list-coupon">
+            <h2 class="tit-type7 c-light-gray">3개</h2>
+            <ul>
+              <li>
+                <button class="coupon-type1">
+                  <div class="inner-wrap">
+                    <strong class="tit">[당첨 쿠폰] 여행가는 달 이벤트 당첨</strong>
+                    <div class="txt">SRT플레이 일반승차권 예매 시 10% 할인</div>
+                    <div class="txt">2022. 8. 2. ~ 2022. 9. 12.</div>
+                    <div class="sale">
+                      <em>10%</em>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button class="coupon-type1">
+                  <div class="inner-wrap">
+                    <strong class="tit">[당첨 쿠폰] 여행가는 달 이벤트 당첨</strong>
+                    <div class="txt">SRT플레이 일반승차권 예매 시 10% 할인</div>
+                    <div class="txt">2022. 8. 2. ~ 2022. 9. 12.</div>
+                    <div class="sale">
+                      <em>10%</em>
+                    </div>
+                  </div>
+                </button>
+              </li>
+            </ul>
+            <div class="no-data">
+              <i class="ico-no-product"></i>
+              <p class="txt">적용 가능한 할인쿠폰이 없습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer bg-gray">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st1" data-id="coupon-active" disabled onclick="btmPopClose('#pop-sale-coupon');btmPopOpen('#pop-sale');$('[data-id=active]').removeAttr('disabled');">적용하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    toggleClassList('.list-coupon li button');
+    couponBtnActive();
+
+    function couponBtnActive(){
+      $('.coupon-type1').on('click', function(){
+        $('[data-id="coupon-active"]').removeAttr('disabled');
+      });
+    }
+
+    $('.btm-popup-wrap .btn-close').on('click', function(){
+      // copuonCloseInit();
+      btmPopClose('#pop-sale-coupon');
+      btmPopOpen('#pop-sale');
+    });    
+    
+    //쿠폰 할인적용 초기화    
+    function copuonCloseInit(){
+      $('.coupon-type1').removeClass('on');
+      $('[data-id="coupon-active"]').attr('disabled', 'disabled'); 
+    }
+
+  </script>

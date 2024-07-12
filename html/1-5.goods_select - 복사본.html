@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+</head> 
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt">승차권 예매</span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="tit-wrap">
+      <h2 class="tit-type3"><span>티플상품 선택</span>
+        <div class="txt c-red">(혜택 예매 조건)</div>
+      </h2>
+      <div class="float-right">
+        <div class="step-process">
+          <ol>
+            <li></li>
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 상품선택 -->
+    <div class="combine-product-select-wrap">
+      <h3 class="tit-type4">총 (<span class="c-pupple">1/3</span>) 선택완료</h3>      
+      <button type="button" class="text-noti" onclick="popOpen('#pop-select-guide');"><span>좌석당 상품을 선택하세요.</span><i class="ico-question"></i></button>
+      <div class="sale-seat-wrap">
+        <ul class="seat-list top-sticky">
+          <li><button class="seat-st">7A<i class="ico-check2"></i></button></li>
+          <li><button class="seat-st on">7A</button></li>
+          <li><button class="seat-st">7A</button></li>
+          <li><button class="seat-st">7A</button></li>
+        </ul>
+      </div>
+      
+      <div class="product-select-wrap">
+        <i class="seat-arr"></i>        
+        <!-- 탭 -->
+        <div class="tab-type2" data-evt="tab-block">
+          <ul>
+            <li class="on"><a href="javascript:void(0);" data-tab="tab-prd1" onclick="$('.e-tag-wrap').addClass('on');">맞춤형 상품</a></li>
+            <li><a href="javascript:void(0);" data-tab="tab-prd2" onclick="$('.e-tag-wrap').removeClass('on');">추천 상품</a></li>
+          </ul>
+        </div>
+        <!-- 상품리스트 -->
+        <div class="select-product-wrap">
+          <div class="select-product-list" id="product-list1" data-id="tab-prd1">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);" class="product-type1 st-vertical" data-id="product-1">
+                      <div class="img img-prd">
+                        <label class="inp-check st2">
+                          <input type="checkbox" disabled>
+                          <span class="ic"><i></i></span>
+                        </label>
+                        <!-- <div class="favorite"><i class="ico-heart"></i></div> -->
+                        <div class="e-tag-wrap">
+                          <div class="e-tag">
+                            <span class="icon"><i></i></span>
+                            <span class="txt">이 지역 특가 상품</span>
+                          </div>
+                        </div>
+                        <img src="../images/temp/temp-product.png" alt="">
+                      </div>
+                      <div class="desc">
+                        <div class="desc-head">
+                          <div class="tit fixed-line2">
+                            광동) 제주삼다수
+                          </div>
+                          <div class="btn-prd-menu">
+                            <button class="off">
+                              <i class="ico-prd-menu"></i>
+                            </button>
+                            <button class="on" onclick="btmPopOpen('#pop-prd-detail');btmPopOpen('#pop-prd-detail2');popInit();">
+                              <i class="ico-prd-menu"></i>
+                              <span class="txt">상세</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="bottom">
+                          <div class="price">
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                              <span class="price">900,000원</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);" class="product-type1 st-vertical has-option" data-id="product-2">
+                      <div class="img full">
+                        <label class="inp-check st2">
+                          <input type="checkbox" disabled>
+                          <span class="ic"><i></i></span>
+                        </label>
+                        <!-- <div class="favorite"><i class="ico-heart"></i></div> -->
+                        <div class="e-tag-wrap">
+                          <div class="e-tag">
+                            <span class="icon"><i></i></span>
+                            <span class="txt">이 지역 특가 상품</span>
+                          </div>
+                        </div>
+                        <img src="../images/temp/temp-event5.jpg" alt="">
+                      </div>
+                      <div class="desc">
+                        <div class="desc-head">
+                          <div class="tit fixed-line2">
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                          </div>
+                          <div class="btn-prd-menu">
+                            <button class="off">
+                              <i class="ico-prd-menu"></i>
+                            </button>
+                            <button class="on" onclick="btmPopOpen('#pop-prd-detail');btmPopOpen('#pop-prd-detail2');popInit();">
+                              <i class="ico-prd-menu"></i>
+                              <span class="txt">상세</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="bottom">
+                          <div class="option">01 대인권(1줄)
+                            <!-- <button class="btn-option" onclick="popOption()">옵션변경</button> -->
+                          </div>
+                          <div class="price">
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                              <span class="price">900,000원</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);" class="product-type1 st-vertical" data-id="product-3">
+                      <div class="img img-prd">
+                        <label class="inp-check st2">
+                          <input type="checkbox" disabled>
+                          <span class="ic"><i></i></span>
+                        </label>
+                        <!-- <div class="favorite"><i class="ico-heart"></i></div> -->
+                        <div class="e-tag-wrap">
+                          <div class="e-tag">
+                            <span class="icon"><i></i></span>
+                            <span class="txt">이 지역 특가 상품</span>
+                          </div>
+                        </div>
+                        <img src="../images/temp/temp-product.png" alt="">
+                      </div>
+                      <div class="desc">
+                        <div class="desc-head">
+                          <div class="tit fixed-line2">
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                          </div>
+                          <div class="btn-prd-menu">
+                            <button class="off">
+                              <i class="ico-prd-menu"></i>
+                            </button>
+                            <button class="on" onclick="btmPopOpen('#pop-prd-detail');btmPopOpen('#pop-prd-detail2');popInit();">
+                              <i class="ico-prd-menu"></i>
+                              <span class="txt">상세</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="bottom">
+                          <!-- <div class="price">
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                              <span class="price">900,000원</span>
+                          </div> -->
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="select-product-list" id="product-list2" data-id="tab-prd2" style="display:none">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);" class="product-type1 st-vertical" data-id="product-1">
+                      <div class="img img-prd">
+                        <label class="inp-check st2">
+                          <input type="checkbox" disabled>
+                          <span class="ic"><i></i></span>
+                        </label>
+                        <!-- <div class="favorite"><i class="ico-heart"></i></div> -->
+                        <img src="../images/temp/temp-product.png" alt="">
+                      </div>
+                      <div class="desc">
+                        <div class="desc-head">
+                          <div class="tit fixed-line2">
+                            광동) 제주삼다수
+                          </div>
+                          <div class="btn-prd-menu">
+                            <button class="off">
+                              <i class="ico-prd-menu"></i>
+                            </button>
+                            <button class="on" onclick="btmPopOpen('#pop-prd-detail');btmPopOpen('#pop-prd-detail2');popInit();">
+                              <i class="ico-prd-menu"></i>
+                              <span class="txt">상세</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="bottom">
+                          <div class="price">
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                              <span class="price">900,000원</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);" class="product-type1 st-vertical has-option" data-id="product-2">
+                      <div class="img full">
+                        <label class="inp-check st2">
+                          <input type="checkbox" disabled>
+                          <span class="ic"><i></i></span>
+                        </label>
+                        <!-- <div class="favorite"><i class="ico-heart"></i></div> -->
+                        <img src="../images/temp/temp-event5.jpg" alt="">
+                      </div>
+                      <div class="desc">
+                        <div class="desc-head">
+                          <div class="tit fixed-line2">
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                          </div>
+                          <div class="btn-prd-menu">
+                            <button class="off">
+                              <i class="ico-prd-menu"></i>
+                            </button>
+                            <button class="on" onclick="btmPopOpen('#pop-prd-detail');btmPopOpen('#pop-prd-detail2');popInit();">
+                              <i class="ico-prd-menu"></i>
+                              <span class="txt">상세</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="bottom">
+                          <div class="option">01 대인권(1줄)
+                            <!-- <button class="btn-option" onclick="popOption()">옵션변경</button> -->
+                          </div>
+                          <div class="price">
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                              <span class="price">900,000원</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide">
+                    <a href="javascript:void(0);" class="product-type1 st-vertical" data-id="product-3">
+                      <div class="img img-prd">
+                        <label class="inp-check st2">
+                          <input type="checkbox" disabled>
+                          <span class="ic"><i></i></span>
+                        </label>
+                        <!-- <div class="favorite"><i class="ico-heart"></i></div> -->
+                        <div class="e-tag-wrap">
+                          <div class="e-tag">
+                            <span class="icon"><i></i></span>
+                            <span class="txt">이 지역 특가 상품</span>
+                          </div>
+                        </div>
+                        <img src="../images/temp/temp-product.png" alt="">
+                      </div>
+                      <div class="desc">
+                        <div class="desc-head">
+                          <div class="tit fixed-line2">
+                            광동) 제주삼다수 5200ml 이어지는 상품명
+                          </div>
+                          <div class="btn-prd-menu">
+                            <button class="off">
+                              <i class="ico-prd-menu"></i>
+                            </button>
+                            <button class="on" onclick="btmPopOpen('#pop-prd-detail');btmPopOpen('#pop-prd-detail2');popInit();">
+                              <i class="ico-prd-menu"></i>
+                              <span class="txt">상세</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="bottom">
+                          <!-- <div class="price">
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                              <span class="price">900,000원</span>
+                          </div> -->
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <!-- // 상품리스트 -->
+      </div>
+    </div>
+    <!-- // 상품선택 -->
+
+    <!-- 유의사항 -->
+    <dl class="toggle-box on-noline on" data-evt="toggle-list">
+      <dt>
+        <a href="javascript:void(0);" class="desc">
+          <i class="ico-arr-list"></i>
+          <div class="f-wrap">
+            <p class="tit">유의사항</p>
+            <label class="inp-toggle stop-event">
+              <input type="checkbox" checked />
+              <span class="ic"></span>
+              <span class="bg"></span>
+            </label>
+          </div>
+        </a>
+      </dt>
+      <dd class="detail" style="display:block">
+        <ul class="list-dot sm light">
+          <li>상품 미 선택 시, 혜택 예매가 적용되지 않습니다.</li>
+          <li>함께 구매하신 상품은 목적지 도착 후 ‘보관함’에 저장됩니다.</li>
+          <li>기간 연장, 부분 취소, 환불/부분환불, 상품변경 불가합니다.</li>
+          <li>승차권은 타 할인과 중복 불가, 소득공제 불가합니다.</li>
+          <li>함께 구매하시는 상품은 구매 전 사정에 따라 변경될 수 있습니다.</li>
+        </ul>
+      </dd>
+    </dl>
+    <!-- // 유의사항 -->
+
+  </div>
+  <!-- // content -->
+
+  <!-- 하단버튼 -->
+  <div class="fixed-footer-wrap">
+    <p class="txt align-c c-red">11시 49분까지 미 결제 시, 해당 좌석 예약이 취소됩니다.</p>
+    <p class="txt align-c c-light-gray">발권을 원하지 않으시면 예약취소를 선택하세요.</p>
+    <div class="btn-wrap">
+      <button type="button" class="btn-type1 st3">예약취소</button>
+      <button type="button" class="btn-type1 st1" disabled data-id="active" onclick="location.href='1-7.sale_payment.html'">티플상품과 혜택 예약</button>
+    </div>
+  </div>    
+
+  <!--총 3개 선택 가능-->
+  <div class="popup-wrap guide-pop" id="pop-select-guide">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <button type="button" class="btn-close"><i class="ico-close-pop"></i></button>
+        <div class="pop-body">
+          <ul class="list-dot st2">
+            <li>
+              동일한 상품 또는 서로 다른 상품 포함하여 총 수량이 승차인원과 같아야 합니다.
+              <br>[예시] – 승차인원 5명 예약한다면?
+              <br>A상품(1개) + B상품(4개) = 총 5개 상품 선택
+            </li>
+            <li>위시리스트에서 선택해서 결합해도 승차 할인 가능합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--1좌석 당 1개 상품 선택-->
+  <div class="popup-wrap" id="pop-combine-select">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-body">
+          <div class="pop-guide-wrap">
+            <div class="combine-select-guide">
+              <strong class="tit">“ 꼭! 이렇게 선택하세요. ”</strong>
+              <div class="img">
+                <img src="../images/common/combine.png" alt="">
+              </div>
+              <div class="txt">좌석 숫자와 동일한 상품 숫자로 예매하세요.<br>(1좌석 당, 1개 상품 선택)</div>
+            </div>
+        </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn" onclick="popClose('#pop-combine-select');">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!--옵션선택-->
+  <div class="popup-wrap" id="pop-option-select">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header"><strong class="tit">옵션선택</strong></div>
+        <div class="pop-body">
+          <div class="pop-option-wrap">
+            <strong class="tit-option">부산 아쿠아리움 입장권</strong>
+            
+            <ul class="option-list">
+              <li>
+                <a href="javascript:void(0);" class="product-type1">
+                  <div class="desc-wrap">
+                    <label class="inp-check st2">
+                      <input type="checkbox" disabled>
+                      <span class="ic"><i></i></span>
+                    </label>
+                    <div class="desc">
+                      <div class="desc-head">
+                        <div class="tit">01 대인입장권</div>
+                      </div>
+                      <div class="info noline">
+                        <dl>
+                          <dt>금액</dt>
+                          <dd>
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">900,000원</span>
+                            <span class="price-org">1,000,000원</span>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="product-type1">
+                  <div class="desc-wrap">
+                    <label class="inp-check st2">
+                      <input type="checkbox" disabled>
+                      <span class="ic"><i></i></span>
+                    </label>
+                    <div class="desc">
+                      <div class="desc-head">
+                        <div class="tit">01 대인입장권</div>
+                      </div>
+                      <div class="info noline">
+                        <dl>
+                          <dt>금액</dt>
+                          <dd>
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">900,000원</span>
+                            <span class="price-org">1,000,000원</span>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="product-type1">
+                  <div class="desc-wrap">
+                    <label class="inp-check st2">
+                      <input type="checkbox" disabled>
+                      <span class="ic"><i></i></span>
+                    </label>
+                    <div class="desc">
+                      <div class="desc-head">
+                        <div class="tit">01 대인입장권</div>
+                      </div>
+                      <div class="info noline">
+                        <dl>
+                          <dt>금액</dt>
+                          <dd>
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">900,000원</span>
+                            <span class="price-org">1,000,000원</span>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="product-type1">
+                  <div class="desc-wrap">
+                    <label class="inp-check st2">
+                      <input type="checkbox" disabled>
+                      <span class="ic"><i></i></span>
+                    </label>
+                    <div class="desc">
+                      <div class="desc-head">
+                        <div class="tit">01 대인입장권</div>
+                      </div>
+                      <div class="info noline">
+                        <dl>
+                          <dt>금액</dt>
+                          <dd>
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">900,000원</span>
+                            <span class="price-org">1,000,000원</span>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+        </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn" onclick="popClose('#pop-option-select');">취소</button>
+            <button type="button" class="btn c-pupple" onclick="popConfirm();">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+</div>
+<!-- // wrap -->
+
+
+<script>
+  // popOpen('#pop-combine-select');
+
+  // 상품상세 load
+  loadInclude('pop-prd-detail'); 
+
+  // 홍길동 고객님을 위한 맞춤 혜택
+  slider('#product-list1', {
+    pagination: {
+      el: "#product-list1 .swiper-pagination",
+      clickable: true,
+    },
+  });
+  slider('#product-list2', {
+    pagination: {
+      el: "#product-list2 .swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  //시트선택 활성화
+  $('.seat-list button').on('click', function(){
+    let left = $(this).position().left + 20 + ($('.seat-st').width()/2 - $('.seat-arr').outerWidth()/2);
+    $('.seat-list button').removeClass('on');
+    $(this).addClass('on');
+    $('.seat-arr').css({left:left})
+    
+  });
+  $('.seat-list li').eq(0).find('button').click(); //맨처음 1번으로체크함.
+
+  //옵션선택
+  function productSelected(obj){
+    if($(obj).hasClass('on')){
+      toastOpen('상품 선택이 완료되었습니다.');
+      // 상품선택 변경일경우
+      // toastOpen('상품 선택이 변경되었습니다.');
+
+      activeBtnCheck(true); //4개 모두 셋팅된뒤에
+    }else{
+      activeBtnCheck(false);
+    }
+  }
+  prdCheckOn('#product-list1 .product-type1', {type:'radio'}, function(obj){
+    productSelected(obj)
+  });
+  //옵션선택
+  prdCheckOn('#product-list2 .product-type1', {type:'radio'}, function(obj){
+    productSelected(obj)
+  });
+  
+  //옵션 팝업
+  function popOption(){
+    popOpen('#pop-option-select', function(){
+      prdCheckOn('.option-list .product-type1', {type:'radio'});
+    });
+  }
+
+  //옵션팝업닫기
+  function popConfirm(){
+    popClose('#pop-option-select');
+  }
+
+  function activeBtnCheck(check){   
+    let checked = check
+    let $btnActive = $('[data-id="active"]');
+
+    if(checked){
+      $btnActive.removeAttr('disabled');
+    }else{
+      $btnActive.attr('disabled', 'disabled');
+    }
+  }
+
+
+  function popInit(){
+    //이용안내 상세
+    $('[data-tab="tab-guide2"]').click();
+    // 취소환불
+    $('[data-tab="tab-detail"]').click();
+  }
+
+
+  //etag action
+  eTag();
+  function eTag(){
+    var elements = document.querySelectorAll(".e-tag-wrap");
+    function updateClasses() {
+      elements.forEach(function(element) {
+        var rect = element.getBoundingClientRect();
+        var windowHeight = window.innerHeight;
+
+        var isInRange = rect.top <= windowHeight * 0.6 && rect.bottom >= windowHeight * 0.3;
+
+        if (rect.top >= 0 && rect.bottom <= windowHeight) {
+          if(isInRange) element.classList.add("on");
+        } else {
+          element.classList.remove("on");
+        }
+      });
+    }
+    function handleScroll() {
+      updateClasses();
+    }
+    window.addEventListener("scroll", handleScroll);
+    updateClasses();
+  }
+
+</script>
+
+</body>
+</html>

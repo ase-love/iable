@@ -1,0 +1,111 @@
+<div class="list-coupon">
+
+  <div class="regist-coupon">
+    <input type="text" placeholder="번호(띄어쓰기, ‘-’없이) 입력" oninput="autoSpace(this)" maxlength="14">
+    <button type="button" disabled onclick="toastOpen('정상적으로 등록했습니다.');popOpen('#pop-giftcard-guide');">확인</button>
+    <p class="txt">SRT플레이 이외 판매처에서 구입하셨거나<br>선물받은 SRT 모바일 금액권 및 할인쿠폰 번호를 등록하세요.</p>
+    <p class="txt-error">잘못된 코드 또는 이미 사용된 코드입니다.</p>
+  </div>
+
+  <!-- 등록 상품(사용가능) -->
+  <div class="tit-wrap">
+    <h2 class="tit-type7"><b>등록 상품</b><span class="light sm">(사용 가능)</span></h2>
+    <div class="right">
+      <span class="remind-check">
+        잔액조회
+        <label class="inp-toggle st2">
+          <input type="checkbox"  /> 
+          <span class="ic"></span>
+          <span class="bg"></span>
+        </label>
+      </span>
+    </div>
+  </div>
+
+  <ul>
+    <li>
+      <div class="gift-card-basic">
+          <div class="number"><span>1234</span> <span>5678</span> <span>9101</span></div>
+          <div class="txt">SRT 모바일 금액권(50,000원)</div>
+          <div class="list">
+            <ul>
+              <li><span class="label">잔액</span><span class="txt">1,000원</span></li>
+              <li><span class="label">유효기간</span><span class="txt">2024. 12. 31.까지</span></li>
+            </ul>
+          </div>
+      </div>
+    </li>
+    <li>
+      <div class="gift-card-basic">
+          <div class="number"><span>1234</span> <span>5678</span> <span>9101</span></div>
+          <div class="txt">SRT 모바일 금액권(50,000원)</div>
+          <div class="list">
+            <ul>
+              <li><span class="label">잔액</span><span class="txt">1,000원</span></li>
+              <li><span class="label">유효기간</span><span class="txt">2024. 12. 31.까지</span></li>
+            </ul>
+          </div>
+      </div>
+    </li>
+  </ul>
+  <div class="noti-wrap">
+    <strong class="tit2">알아두세요!</strong>
+    <ul class="list-dot st3 gray">
+      <li>할인 없는 일반승차권(특실 포함) 예매 시 사용 가능합니다.</li>
+      <li>최저운임(7,500원) 구간은 적용되지 않습니다.</li>
+      <li>1개 좌석에 1개 금액권으로 적용됩니다.</li>
+    </ul>
+ </div>
+</div>
+
+
+  <!--거절하기-->
+  <div class="popup-wrap" id="pop-giftcard-guide">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-body">
+          <div class="pop-guide-wrap">
+            <div class="gift-card-guide">
+              <div class="img">
+                <img src="../images/giftcard/gift-card-guide.png" alt="">
+              </div>
+              <div class="txt">홍길동님께서 선물한 금액권을
+                <br>등록하시면 양도 및 재등록이 불가합니다.</div>
+            </div>
+        </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn" onclick="popClose('#pop-giftcard-guide');popOpen('#pop-giftcard-guide2');">거절하기</button>
+            <button type="button" class="btn c-pupple" onclick="popClose('#pop-giftcard-guide');">등록하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+    
+  <!--선물 거절하기-->
+  <div class="popup-wrap" id="pop-giftcard-guide2">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-body">
+          <div class="pop-guide-wrap">
+            <div class="gift-card-guide">
+              <div class="txt">선물 거절 시 구매자 결제수단으로
+                <br>자동 환불 처리되며, 사용이 불가합니다.</div>
+              <div class="txt"><b>정말 거절하시겠습니까?</b></div>
+            </div>
+        </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn" onclick="popClose('#pop-giftcard-guide2');">선물 거절하기</button>
+            <button type="button" class="btn c-pupple" onclick="popClose('#pop-giftcard-guide2');">선물 등록하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  

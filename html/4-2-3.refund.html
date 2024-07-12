@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt hide"></span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <!-- text-main -->
+    <div class="text-main" data-id="header-tit">
+      <h1 class="tit-type1">구매내역</h1>
+    </div>
+    <!-- // text-main -->            
+    <h2 class="tit-type3 top-sticky"><span>환불대상 선택</span></h2>
+
+    <div class="refund-wrap">
+      <div class="trip-info">
+        <div class="info">
+          <span class="time">19:40</span>
+          <b class="pos">수서</b>
+        </div>
+        <div class="way">
+          <i class="ico-waygo"></i>
+        </div>
+        <div class="info">
+          <div cRlass="pos">
+            <span class="time">21:05</span>
+            <b class="pos">울산통도사</b>
+          </div>
+        </div>
+      </div>
+      
+      <div class="f-wrap">
+        <button type="button"><span class="text-noti st2" onclick="popOpen('#pop-refund-guide');"><i class="ico-noti"></i><span>환불안내</span></span></button>
+        <div class="right"><button type="button" class="btn-line st3" id="total-select">전체선택</button></div>
+      </div>
+
+      <ul class="list-check-box">
+        <li>
+          <label class="inp-check st3">
+            <input type="checkbox" name="check">
+            <span class="ic"><i></i></span>
+            <div class="txt-box">
+              <div class="txt">SRT 301, 일반실 | 어른, 4호차 7A</div>
+              <div class="price">16,500원</div>
+            </div>
+          </label>
+        </li>
+        <li>
+          <label class="inp-check st3">
+            <input type="checkbox" name="check">
+            <span class="ic"><i></i></span>
+            <div class="txt-box">
+              <div class="txt">SRT 301, 일반실 | 어른, 4호차 7A</div>
+              <div class="price">16,500원</div>
+            </div>
+          </label>
+        </li>
+        <li>
+          <label class="inp-check st3">
+            <input type="checkbox" name="check">
+            <span class="ic"><i></i></span>
+            <div class="txt-box">
+              <div class="txt">SRT 301, 일반실 | 어른, 4호차 7A</div>
+              <div class="price">16,500원</div>
+            </div>
+          </label>
+        </li>
+      </ul>
+      <!-- // list-check-box -->
+    </div>  
+
+  </div>
+  <!-- // content -->
+
+  <div class="fixed-footer-wrap">
+    <div class="btn-wrap">
+      <button class="btn-type1 st1" disabled id="btn-refund" onclick="popOpen('#pop-refund-guide2');"><span>환불신청</span></button>
+    </div>
+  </div>
+</div>
+<!-- // wrap -->
+
+
+  <!--환불안내-->
+  <div class="popup-wrap" id="pop-refund-guide">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header"><strong class="tit">환불안내</strong></div>
+        <div class="pop-body">
+          
+          <div class="pop-guide-wrap">
+            <div class="txt">
+              <div class="c-blue">환불의 범위</div>
+              승차권 환불 시 함께 구매하신 상품금액과 함께 환불됩니다.
+            </div>
+            
+            <div class="txt">
+              <div class="c-blue">환불기한(영업일 기준)</div>
+              <ul class="list-dash">
+                <li>당일 결제 : 당일 환불(부분환불 불가)</li>
+                <li>신용카드 : 5~7일</li>
+                <li>체크카드 : 6~8일</li>
+              </ul>
+            </div>
+            
+            <div class="txt">*카드사마다 환불기준 및 기간이 상이할 수 있으므로 보다 자세한 환불기한은 카드사를 통해 확인해 주세요.</div>
+        </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn c-pupple" onclick="popClose('#pop-refund-guide');">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--위약금 및 환불안내-->
+  <div class="popup-wrap" id="pop-refund-guide2">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header"><strong class="tit">위약금 및 환불안내</strong></div>
+        <div class="pop-body">
+          
+          <div class="pop-guide-wrap">
+            <div class="txt">본 승차권을 환불하실 경우 발생되는 위약금입니다.</div>
+
+            <div class="price">3,000원</div>
+            
+            
+            <ul class="list-dot ">
+              <li>고객님께서는 승차권 결제 시 발권 및 환불에 따른 위약금 발생에 동의하셨습니다.</li>
+              <li>환불일로부터 약 7일 이후 결제가 취소되며, 카드사에서는 고객님의 결제일에 신용으로 환불해 드리고 있습니다.</li>
+              <li>정확한 환불 일자 등 보다 상세한 사항은 해당 결제 카드사에 문의하여 주시기 바랍니다.</li>
+            </ul>
+            <br>
+            <div class="txt align-c">최종 환불 하시겠습니까?</div>
+            
+        </div>
+
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn" onclick="popClose('#pop-refund-guide2');">취소</button>
+            <button type="button" class="btn c-pupple" onclick="popClose('#pop-refund-guide2');toastOpen('환불이 정상 처리되었습니다.', function(){location.href='4-2.storage_box.html'});">최종 환불 요청</button>
+            <button type="button" class="btn c-pupple" onclick="popClose('#pop-refund-guide2');toastOpen('<span class=\'c-red\'>오류가 발생하였습니다. 다시 시도 해 주세요.</span>');">오류</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<script>
+$('#total-select').on('click', function(){
+  $('[name=check]').prop('checked', true);
+  $('#btn-refund').removeAttr('disabled');
+}); 
+
+$('[name=check]').on('change', function(){
+  let checked = $('[name=check]:checked').length > 0 ? true : false;
+  if(checked){
+    $('#btn-refund').removeAttr('disabled');
+    }else{
+      $('#btn-refund').attr('disabled', 'disabled');
+    }  
+});
+
+</script>
+
+</body>
+</html>

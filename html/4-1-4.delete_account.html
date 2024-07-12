@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+<!-- 회원정보체크만 추가(퍼블만 사용중 - 개발과분리) -->
+<script type="text/javascript" language="javascript" src="../js/member-pub.js"></script>
+
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="4-1.my_profile.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt hide"></span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="member-wrap">
+      <div class="text-main" data-id="header-tit">
+        <h1 class="tit-type1">내 정보 관리</h1>
+      </div>      
+      <h2 class="tit-type3 top-sticky"><span>회원탈퇴</span></h2>
+      <!-- text-main -->
+      <div class="text-main">
+        <h3 class="tit-type1">
+          홍길동 님
+          <br>정말 SRT플레이 계정을 삭제하세요?
+        </h3>
+        <p class="txt">
+          상품과 할인혜택이 소멸되며 서비스 이용이 불가능합니다.
+        </p>
+      </div>
+      <!-- // text-main -->
+
+      <div class="extinction-wrap">
+        <h3 class="tit-type7">소멸 예정 내역</h3>
+        <div class="extinction-list">
+          <ul>
+            <li>
+              <strong>승차권</strong>
+              <em>1</em>
+            </li>
+            <li>
+              <strong>할인쿠폰</strong>
+              <em>0</em>
+            </li>
+            <li>
+              <strong>티플상품</strong>
+              <em>0</em>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+        
+      <h3 class="tit-type2">본인 확인을 위한 비밀번호 입력</h3>
+      <div class="list-match">
+        <ul>
+          <li>
+            <em>아이디</em>
+            <div class="info">SRTPlay@enable.co.kr</div>
+          </li>          
+          <li>
+            <em>비밀번호</em>
+            <div class="info">
+              <input type="password" placeholder="비밀번호를 입력해 주세요." id="pw">
+            </div>
+          </li>
+        </ul>
+      </div>   
+        
+        
+      <div class="service-improvement">
+        <p class="txt">탈퇴하고자 하시는 불편한 사항을 알려주시면 서비스 개선을 위해 노력하겠습니다.</p>
+        <ul class="list-check">
+          <li>
+            <label class="inp-check st3">
+              <input type="radio" name="opinion">
+              <span class="ic"><i></i></span>
+              <span class="t">개인정보 유출 우려</span>
+            </label>
+          </li>
+          <li>
+            <label class="inp-check st3">
+              <input type="radio" name="opinion">
+              <span class="ic"><i></i></span>
+              <span class="t">광고성 메일(메시지 포함)</span>
+            </label>
+          </li>
+          <li>
+            <label class="inp-check st3">
+              <input type="radio" name="opinion">
+              <span class="ic"><i></i></span>
+              <span class="t">이용빈도 낮음</span>
+            </label>
+          </li>
+          <li>
+            <label class="inp-check st3">
+              <input type="radio" name="opinion">
+              <span class="ic"><i></i></span>
+              <span class="t">회원 혜택 부족</span>
+            </label>
+          </li>
+        </ul>
+
+        <div class="etc-opinion">
+          <textarea placeholder="[기타 추가의견을 남겨주세요]"></textarea>
+        </div>
+      </div>
+
+      <div class="noti-wrap">
+          <strong class="tit c-red"><i class="ico-warning"></i>회원탈퇴 전 유의사항</strong>
+          <div class="box-type1">
+            <ul class="list-dot st2 light">
+              <li>주문내역의 고객님의 정보는 회원탈퇴 후에도 소비자보호에 관한 법률 시행령이 정한 일정기간 동안 보존됩니다.</li>
+              <li>회원탈퇴 시 보유하신 콘텐츠(승차권, 쿠폰, 실물 및 모바일 콘텐츠 등)가 삭제됩니다.</li>
+              <li>환불신청 등 서비스가 진행중인 경우 모든 처리가 완료된 후 탈퇴가 가능합니다.</li>
+            </ul>
+          </div>
+      </div>
+
+      <div class="btn-wrap">
+        <button class="btn-type1 st1" disabled data-id="active" onclick="alertOpen('회원탈퇴 전 유의사항 및 소멸 예정 내역을<br>모두 확인하고 회원탈퇴 하시겠습니까?', ['취소', '회원탈퇴'], callback);"><span>회원탈퇴 신청하기</span></button>
+      </div>
+    </div>
+  </div>
+  <!-- // content -->
+</div>
+<!-- // wrap -->
+
+
+<script>
+
+  $('#id, #pw').on('keyup', function(){
+    formCheck();
+  });
+
+  $('[name=opinion]').on('change', function(){
+    formCheck();
+  });
+
+  function formCheck(){
+    let serviceChecked = $('[name=opinion]:checked').length > 0 ? true : false
+    let idChecked = $('#id').val().length > 0;
+    let pwChecked = $('#pw').val().length > 0;
+    let $btnActive = $('[data-id="active"]');
+    let checked = serviceChecked && idChecked && pwChecked;
+
+    if(checked){
+      $btnActive.removeAttr('disabled');
+    }else{
+      $btnActive.attr('disabled', 'disabled');
+    }
+ }
+
+ function callback(type){ //callback 필요없을시 제거
+    if(type === '회원탈퇴') location.href='4.my_main.html'
+  }
+</script>
+</body>
+</html>

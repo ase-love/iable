@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+<!-- 달력 추가 -->
+<script type="text/javascript" language="javascript" src="../js/lunarCalendar.js"></script>
+<script type="text/javascript" language="javascript" src="../js/calendar.js"></script>
+
+</head> 
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="txt">시간표 조회</span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="tit-wrap top-sticky">
+      <h2 class="tit-type3"><span>정차역 선택</span></h2>
+      <div class="float-right">
+        <button type="button" class="btn-map-station" onclick="btmPopClose('#pop-station');btmPopOpen('#pop-map');alertOpen('환승노선은<br>SRT 앱/홈페이지에서만 가능합니다.', ['확인']);"><i class="ico-map-station"></i></button>
+      </div>
+    </div>
+
+    
+    <div class="station-select">
+      <button class="condition" onclick="setStationPos('start');btmPopOpen('#pop-station', stationCheck)">
+        <div class="station-start" id="station-start"><span class="placeholder">출발역 선택</span></div>
+      </button>
+      <div class="btn-exchange " onclick="exchagne(this)"><i class="ico-exchagne"></i></div>
+      <button class="condition" onclick="setStationPos('arrive');btmPopOpen('#pop-station', stationCheck)">
+        <div class="station-arrive" id="station-arrive"><span class="placeholder">도착역 선택</span></div>
+      </button>
+    </div>
+
+    <div class="trip-select-menu">
+      <button class="btn prev" disabled><i class="arr">&lt;</i>이전날</button>
+      <div class="condition txt" onclick="btmPopOpen('#pop-calendar', callbackCalendar, closeCalendar)">
+        <button id="date" class="txt">2022. 8. 10.(수)</button>
+      </div>
+      <button class="btn next">다음날<i class="arr">&gt;</i></button>
+    </div>
+    <!-- // trip-select-menu -->
+
+    <div class="data-time-table">
+      <ul class="table-header top-sticky" data-top="93">
+        <li class="train">열차</li>
+        <li class="start">출발</li>
+        <li class="arrive">도착</li>
+        <li class="time">소요시간</li>
+        <li class="price">요금</li>
+      </ul>
+      <div class="table-body">
+        <ul class="time-list" style="display:none">
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="time">2시간 27분</div>
+              <div class="price">
+                <button type="button" class="btn btn-normal h-st2" onclick="btmPopOpen('#pop-price')">조회</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="no-data">
+          <i class="ico-no-product"></i>
+          <p class="txt c-light-gray2"><span class="medium">출발역 및 도착역을 선택하세요.</span>
+            <br>열차시간 및 운임요금을 빠르고 정확하게
+            <br>확인하실 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- // data-time-table -->
+
+  </div>
+  <!-- // content -->
+
+
+  <!-- 요금조회 -->
+  <div class="btm-popup-wrap half" id="pop-price" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">SRT 377</strong>
+          <div class="right">
+            <div class="time-info">21:30 <i class="ico-arr-right"></i> 23:58</div>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="data-type1">
+            <table>
+              <colgroup>
+                <col style="width:28%">
+                <col style="width:24%">
+                <col style="width:24%">
+                <col style="width:24%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>어른</th>
+                  <th>어린이</th>
+                  <th>경로</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>일반실</td>
+                  <td>76,300원</td>
+                  <td>52,500원</td>
+                  <td>52,500원</td>
+                </tr>
+                <tr>
+                  <td>특실</td>
+                  <td>76,300원</td>
+                  <td>52,500원</td>
+                  <td>52,500원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st3" onclick="btmPopClose('#pop-price');" style="width:155px">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 다른 날 선택하기 -->
+  <div class="fixed-footer-wrap">
+    <div class="btn-wrap">
+      <button class="btn-type1 st1" disabled data-id="active" onclick="$('.no-data').hide();$('.time-list').show();">열차 조회하기</button>
+    </div>
+  </div>  
+
+</div>
+<!-- // wrap -->
+
+<script>
+  loadInclude('reserve-options');
+</script>
+</body>
+</html>

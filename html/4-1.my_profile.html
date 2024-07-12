@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+<!-- 회원정보체크만 추가(퍼블만 사용중 - 개발과분리) -->
+<script type="text/javascript" language="javascript" src="../js/member-pub.js"></script>
+
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="4-1.my_profile.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt hide"></span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="member-wrap">
+      <!-- text-main -->
+      <div class="text-main" data-id="header-tit">
+        <h1 class="tit-type1">내 정보 관리</h1>
+      </div>
+      <!-- // text-main -->
+
+      <h1 class="tit-type3 top-sticky"><span>개인정보 수정</span></h1>
+      <div class="list-match">
+        <ul>
+          <li>
+            <em>이름</em>
+            <div class="info">
+              남욱
+              <div class="right">
+                <a href="4-1-1.profile_name.html" class="btn-type6 st2">변경</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <em>E-Mail</em>
+            <div class="info">
+              nw@tiple.kr
+            </div>
+          </li>          
+          <li>
+            <em>비밀번호</em>
+            <div class="info">
+              <input type="password" placeholder="현재 비밀번호 입력">
+              <div class="right">
+                <button type="button" onclick="href.location='4-1-2.profile_pwd.html'" disabled class="btn-type6 st2">변경</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <em>휴대폰 번호</em>
+            <div class="info">
+              010-1234-5678
+              <div class="right">
+                <a href="4-1-3.profile_phone.html" class="btn-type6 st2">변경</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <em>SNS 연결</em>
+            <div class="info">
+              카카오 로그인
+              <div class="right">
+                <label class="inp-toggle" onclick="alertOpen('연결된 SNS 계정을 삭제하시겠습니까?', ['취소', '삭제'], callback);">
+                  <input type="checkbox" id="cacao-check" checked disabled />
+                  <span class="ic"></span>
+                  <span class="bg"></span>
+                </label>
+              </div>
+            </div>
+          </li>
+          <li>
+            <em>마케팅 동의</em>
+            <div class="info-wrap">
+              <div class="info">
+                이용 혜택 안내, 마케팅 동의
+                <div class="right">
+                  <label class="inp-toggle" onclick="alertOpen('연결된 SNS 계정을 삭제하시겠습니까?', ['취소', '삭제'], callback);">
+                    <input type="checkbox" id="cacao-check" checked disabled />
+                    <span class="ic"></span>
+                    <span class="bg"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="info sub">
+                <p class="sub-txt">SMS, MMS, 알림톡, 이메일 등 안내</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="end-content">
+        <div class="btn-wrap align-l">
+          <a href="4-1-4.delete_account.html" class="btn-line">회원탈퇴</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // content -->
+</div>
+<!-- // wrap -->
+
+<script>
+  function callback(type){ //callback 필요없을시 제거
+    let checked = false;
+    if(type === '취소') checked = true
+    if(type === '삭제') checked = false
+    $('#cacao-check').prop('checked', checked);
+  }
+
+</script>
+
+</body>
+</html>

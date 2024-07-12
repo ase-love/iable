@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+<!-- 회원정보체크만 추가(퍼블만 사용중 - 개발과분리) -->
+<script type="text/javascript" language="javascript" src="../js/member-pub.js"></script>
+
+</head>
+<body>
+<!-- wrap --> 
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="javascript:history.back();" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt hide"></span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="srtcard-gift-wrap full-wrap">
+      <!-- text-main -->
+      <div class="text-main" data-id="header-tit">
+        <h1 class="tit-type1">선물하기</h1>
+      </div>
+      <!-- // text-main -->      
+      <!-- text-main -->
+      <div class="text-main">
+        <h1 class="tit-type1">
+          받으실 분의
+          <br>휴대폰 번호를 입력해 주세요
+        </h1>
+        <p class="txt">
+          수량에 맞게 휴대폰 번호를 입력해 주세요.
+        </p>
+      </div>
+      <!-- // text-main -->
+
+      <div class="gift-phone-number">
+        <label class="inp-check st2">
+          <input type="checkbox" name="opinion">
+          <span class="ic"><i></i></span>
+          <span class="t">한 명에게 모두 전송</span>
+        </label>
+        <ul>
+          <li>
+            <div class="form-type1">
+              <div class="f-wrap">
+                <input type="number" placeholder="휴대폰 번호 ‘-’없이 입력">
+                <i class="ico-val-check" style="display:none;"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="form-type1">
+              <div class="f-wrap">
+                <input type="number" value="01022344456">
+                <i class="ico-val-check"></i>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="form-type1">
+              <div class="f-wrap error">
+                <input type="number" value="01022344456">
+                <i class="ico-val-check" style="display:none;"></i>
+              </div>
+              <div class="txt-guide-wrap">
+                <p class="txt-error">휴대폰 번호 형식에 맞게 입력해 주세요.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="end-content">
+        <div class="btn-wrap column ">
+          <button class="btn-type1 st1 full" onclick="location.href='5-2-2.gift_check2.html'"><span>1명에게 선물하기</span></button>
+          <button class="btn-type1 st1 full"  disabled><span>선물하기</span></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- // content -->
+</div>
+<!-- // wrap -->
+
+</body>
+</html>

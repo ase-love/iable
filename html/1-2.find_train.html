@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+<!-- 달력 추가 -->
+<script type="text/javascript" language="javascript" src="../js/lunarCalendar.js"></script>
+<script type="text/javascript" language="javascript" src="../js/calendar.js"></script>
+
+</head> 
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt">승차권 예매</span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="tit-wrap top-sticky">
+      <h2 class="tit-type3"><span>열차선택</span></h2>
+      <div class="float-right">
+        <div class="step-process">
+          <ol>
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="station-select">
+      <div class="condition" onclick="setStationPos('start');btmPopOpen('#pop-station', stationCheck)">
+        <div class="station-start" id="station-start">수서</div>
+      </div>
+      <div class="way">
+        <i class="ico-waygo"></i>
+      </div>
+      <div class="condition" onclick="setStationPos('arrive');btmPopOpen('#pop-station', stationCheck)">
+        <div class="station-arrive" id="station-arrive">울산통도사</div>
+      </div>
+    </div>
+    <!-- // station-select -->
+    
+    <div class="trip-select-menu">
+      <button class="btn prev" disabled><i class="arr">&lt;</i>이전날</button>
+      <div class="condition txt" onclick="btmPopOpen('#pop-calendar', callbackCalendar, closeCalendar)">
+        <button id="date" class="txt">2022. 8. 10.(수)</button>
+      </div>
+      <button class="btn next">다음날<i class="arr">&gt;</i></button>
+    </div>
+    <!-- // trip-select-menu -->
+
+    <div class="data-time-table">
+      <ul class="table-header top-sticky" data-top="94">
+        <li class="train">열차</li>
+        <li class="start">출발</li>
+        <li class="arrive">도착</li>
+        <li class="special">특실</li>
+        <li class="general">일반실</li>
+      </ul>
+      <div class="table-body">
+        <ul class="time-list">
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="special">
+                <a href="javascript:void(0);" class="btn btn-normal">예약</a>
+              </div>
+              <div class="general">
+                <a href="javascript:void(0);" class="btn btn-normal">예약</a>
+              </div>
+            </div>
+            <div class="notice-txt expect">10분 지연 (상황에따라 변동될 수 있습니다.)</div>
+            <div class="desc">
+              <div class="take-time">2시간 29분 소요</div>
+              <div class="menu">
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-time')">시간표</button>
+                <span class="bar"></span>
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-price')">운임요금</button>
+              </div>
+            </div>            
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="special">
+                <a href="javascript:void(0);" class="btn btn-normal disabled">
+                  매진
+                </a>
+              </div>
+              <div class="general">
+                <a href="javascript:void(0);" class="btn btn-normal">예약</a>
+              </div>
+            </div>
+            <div class="notice-txt confirm">10분 지연 (상황에따라 변동될 수 있습니다.)</div>
+            <div class="desc">
+              <div class="take-time">2시간 29분 소요</div>
+              <div class="menu">
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-time')">시간표</button>
+                <span class="bar"></span>
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-price')">운임요금</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="special">
+                <a href="javascript:void(0);" class="btn btn-normal">예약</a>
+              </div>
+              <div class="general">
+                <a href="javascript:void(0);" class="btn btn-sale">티플예약
+                  <div class="sale">10%<i class="ico-sale-down"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="desc">
+              <div class="take-time">2시간 29분 소요</div>
+              <div class="menu">
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-time')">시간표</button>
+                <span class="bar"></span>
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-price')">운임요금</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="special">
+                <a href="javascript:void(0);" class="btn btn-normal disabled">
+                  매진
+                  <div class="sale">티플예약<i class="ico-sale-down"></i></div>
+                </a>
+              </div>
+              <div class="general">
+                <a href="javascript:void(0);" class="btn btn-sale">티플예약
+                  <div class="sale">10%<i class="ico-sale-down"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="desc">
+              <div class="take-time">2시간 29분 소요</div>
+              <div class="menu">
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-time')">시간표</button>
+                <span class="bar"></span>
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-price')">운임요금</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="info">
+              <div class="train">301</div>
+              <div class="start">10:00</div>
+              <div class="arrive">12:20</div>
+              <div class="special">
+                <a href="javascript:void(0);" class="btn btn-normal">예약</a>
+              </div>
+              <div class="general">
+                <a href="javascript:void(0);" class="btn btn-sale">티플예약
+                  <div class="sale">10%<i class="ico-sale-down"></i></div>
+                </a>
+              </div>
+            </div>
+            <div class="desc">
+              <div class="take-time">2시간 29분 소요</div>
+              <div class="menu">
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-time')">시간표</button>
+                <span class="bar"></span>
+                <button type="button" onclick="getPos(this);btmPopOpen('#pop-price')">운임요금</button>
+              </div>
+            </div>            
+          </li>
+        </ul>
+        <div class="no-data">
+          <i class="ico-no-product"></i>
+          <p class="txt c-light-gray2"><span class="medium">조회된 열차가 없습니다.</span>
+            <br>다른 조건으로 검색해 보세요 :)
+          </p>
+        </div>
+        <div class="btn-more-wrap">
+          <button type="button" class="btn-more st2"><span>열차 더 보기</span><i class="ico-arr-more"><svg width="18" height="28" viewBox="0 0 18 28" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect x="7.5" y="0.5" width="2.5" height="26.5" rx="1.25" fill="#1F2125"></rect> <rect x="15.9854" y="17" width="2.5" height="12.5" rx="1.25" transform="rotate(45 15.9854 17)" fill="#1F2125"></rect> <rect y="18.7678" width="2.5" height="12.5" rx="1.25" transform="rotate(-45 0 18.7678)" fill="#1F2125"></rect> </svg> </i></button>
+        </div>
+      </div>
+    </div>
+    <!-- // data-time-table -->
+
+  </div>
+  <!-- // content -->
+
+
+  <!-- 시간표 -->
+  <div class="btm-popup-wrap half" id="pop-time" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">시간표</strong>
+          <div class="right">
+            <div class="f-wrap">
+              <span class="medium">SRT 337</span>
+              <span class="bar"></span>
+              2022. 8. 12(금)
+            </div>
+          </div>
+        </div>
+        <div class="pop-body" style="padding-bottom: 0;">
+          <div class="data-type1">
+            <table>
+              <colgroup>
+                <col style="width:auto">
+                <col style="width:23%">
+                <col style="width:23%">
+                <col style="width:23%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>역명</th>
+                  <th>도착시간</th>
+                  <th>출발시간</th>
+                  <th>지연(분)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>울산(통도사)</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>수서</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>대구</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>김천구미</td>
+                  <td>00:23</td>
+                  <td>22:15</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>울산(통도사)</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>수서</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>대구</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>김천구미</td>
+                  <td>00:23</td>
+                  <td>22:15</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>울산(통도사)</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>수서</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>대구</td>
+                  <td>-</td>
+                  <td>22:15</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>김천구미</td>
+                  <td>00:23</td>
+                  <td>22:15</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st3" onclick="btmPopClose('#pop-time');setPos();" style="width:155px">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 운임요금 -->
+  <div class="btm-popup-wrap half" id="pop-price" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">운임요금</strong>
+          <div class="right">
+            <div class="f-wrap">
+              <span class="medium">SRT 337</span>
+              <span class="bar"></span>
+              2022. 8. 12(금)
+            </div>
+          </div>
+        </div>
+        <div class="pop-body">
+          <div class="data-type1">
+            <table>
+              <colgroup>
+                <col style="width:33.3333%">
+                <col style="width:33.3333%">
+                <col style="width:33.3333%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>승객</th>
+                  <th>특실</th>
+                  <th>일반실</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>어른</td>
+                  <td>76,300원</td>
+                  <td>52,500원</td>
+                </tr>
+                <tr>
+                  <td>어린이</td>
+                  <td>50,000원</td>
+                  <td>26,200원</td>
+                </tr>
+                <tr>
+                  <td>경로</td>
+                  <td>76,300원</td>
+                  <td>52,500원</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="data-noti">기준 요금으로 할인 결제 시 변경될 수 있습니다.</div>          
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st3" onclick="btmPopClose('#pop-price');setPos();" style="width:155px">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 예약하기 -->
+  <div class="btm-popup-wrap" id="pop-reserve" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">예약하기</strong>
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body">
+          <div class="pop-reserve-wrap">
+            <a href="1-4.seat_select_normal.html" class="btn-type1 st1"><span>일반승차권<small>(금액권 적용)</small> 예약</span></a>
+            <p class="noti">홍길동 님은 사용할 수 있는 금액권이 있습니다.</p>
+            <a href="1-4.seat_select_normal.html" class="btn-type1 st3"><span>일반승차권 예약</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 티플예약하기 -->
+  <div class="btm-popup-wrap" id="pop-reserve-tiple" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">예약하기</strong>
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body">
+          <div class="pop-reserve-wrap">
+            <a href="1-4.seat_select_tple.html" class="btn-type1 st1"><span>티플승차권 예약</span></a>
+            <a href="1-4.seat_select_normal.html" class="btn-type1 st3"><span>일반승차권<small>(금액권 적용)</small> 예약</span></a>
+            <p class="noti">홍길동 님은 사용할 수 있는 금액권이 있습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 다른 날 선택하기 -->
+  <div class="fixed-footer-wrap" data-id="other-select">
+    <div class="btn-wrap">
+      <a href="1-1.book_home.html" class="btn-type1 st3">다른 날 선택하기</a>
+    </div>
+  </div>  
+  <!-- 할인승차권 하단 에약버튼 -->
+  <div class="fixed-footer-wrap" data-id="sale-ticket" style="display: none;">
+    <p class="txt align-c">티플상품 선택하면, 예매 혜택!</p>
+    <div class="btn-wrap">
+      <a href="javascript:void(0);" class="btn-type1 st3" onclick="btmPopOpen('#pop-reserve');">일반승차권 예약하기</a>
+      <!-- <a href="1-4.seat_select_normal.html" class="btn-type1 st1" onclick="btmPopClose('#pop-reserve-normal');">티플 혜택 예약하기</a> -->
+      <a href="javascript:void(0);" class="btn-type1 st1" onclick="btmPopOpen('#pop-reserve-tiple');">티플 혜택 예약하기</a>
+    </div>
+  </div>  
+  <!-- 일반승차권 하단 에약버튼 -->
+  <div class="fixed-footer-wrap" data-id="normal-ticket" style="display: none;">
+    <div class="btn-wrap">
+       <!-- <a href="1-4.seat_select_normal.html" class="btn-type1 st1" onclick="btmPopClose('#pop-reserve-normal');">일반승차권 예약하기</a> -->
+       <a href="javascript:void(0);" class="btn-type1 st1" onclick="btmPopOpen('#pop-reserve');">일반승차권 예약하기</a>
+    </div>
+  </div>  
+
+</div>
+<!-- // wrap -->
+
+<script>
+   loadInclude('reserve-options');
+
+   loading('.table-body');
+   setTimeout(() => {
+      loadingHide();
+   }, 300);
+
+   //예약, 티플예약 버튼
+  //  $('.btn-normal').on('click', function(){
+  //   btmPopOpen('#pop-reserve');$('#btn-tiple').hide();
+  //  });
+  //  $('.btn-sale').on('click', function(){
+  //   btmPopOpen('#pop-reserve');$('#btn-tiple').show();
+  //  });
+   
+
+  //퍼블용
+  if(location.href.match('#nodata')){
+    $('.time-list').remove();
+  }else{
+    $('.no-data').remove();
+    $('[data-id=other-select]').remove();
+  }
+
+</script>
+
+</body>
+</html>

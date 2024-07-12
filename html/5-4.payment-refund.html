@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="javascript:void(0);" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt hide"></span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+      <!-- text-main -->
+      <div class="text-main" data-id="header-tit">
+        <h1 class="tit-type1">환불하기</h1>
+      </div>
+      <!-- // text-main -->          
+      <!-- srtcard-gift-wrap -->
+      <div class="srtcard-gift-wrap">
+        <!-- 금액권 -->
+        <div class="card-visual2">
+          <div class="gift-card-wrap type2">
+            <div class="gift-card">
+              <div class="front">
+                <i class="ico-logo"></i>
+                <div class="card-text">
+                  <span class="label">
+                    SRT 
+                    <br>모바일 금액권
+                  </span>
+                  <b class="price">50,000원</b>
+                </div>
+              </div>
+              <div class="back">
+                <div class="giftcard-noti">
+                  <b class="tit">알아두세요!</b>
+                  <p class="txt">결합상품과 함께 할인이 적용되는 티플승차권은 SRT 금액권 적용이 불가합니다. (일반승차권 전용)</p>
+                  <p class="txt">최저 운임구간(운임료 7,900원 이하)는 SRT 금액권이 적용되지 않습니다.</p>
+                  <p class="txt">SRT플레이 이외 타 발권매체(SRT 앱, SR 홈페이지 등)에서  승차권을 취소하면 차감된 금액이 복원되지 않습니다.</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn-flip">
+              <div class="arrow"></div>
+            </button>
+          </div>
+        </div>
+        <!-- // 금액권 -->
+
+        <div class="receiver-wrap">
+          <b class="tit">받은 사람</b>
+          <div class="form-type-wrap">
+            <div class="form-type1">
+              <span class="label">to.</span>
+              <div class="f-wrap">
+                <input type="text" disabled value="010-22**-44**">
+                <div class="status refund">
+                  <span class="txt">결제완료(미사용)</span>
+                  <button class="btn" onclick="alertOpen('삭제 시 내역이 복구되지 않으며,<br>함께 구매하신 상품과 함께 삭제됩니다.<br>내역을 삭제하시겠습니까?', ['취소', '<span class=\'c-pupple\'>삭제하기</span>'], callback);">환불하기</button>
+                </div>
+              </div>
+              <div class="txt-guide-wrap">
+                <p class="txt-error" style="display: none;">이메일을 형식에 맞게 입력 해 주세요.</p>
+              </div>
+            </div>
+            <div class="form-type1">
+              <span class="label">to.</span>
+              <div class="f-wrap">
+                <input type="text" disabled value="010-22**-44**">
+                <div class="status impossible">
+                  <span class="txt">결제완료(미사용)</span>
+                  <button class="btn" onclick="alertOpen('수신자가 이미 금액권을 등록하여 <br>사용중으로 환불이 불가합니다.', ['취소', '<span class=\'c-pupple\'>확인</span>'], callback);">환불불가</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-type1">
+              <span class="label">to.</span>
+              <div class="f-wrap">
+                <input type="text" disabled value="010-22**-44**">
+                <div class="status end">
+                  <span class="txt">취소 내역보기</span>
+                  <button class="btn" onclick="btmPopOpen('#payment-info-srtcard')">환불완료</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="list-dot">
+          <li>선물하기 환불의 경우 수신자가 결제완료(미사용)으로 금액권을 미등록 상태여야 환불 가능합니다.</li>
+          <li>수신자가 이미 금액권을 등록하고 사용중이라면 발신자는 환불이 불가합니다.</li>
+          <li>선물하기 환불 카드사마다 환불 방식과 기간이 상이하오니 환불기간이 지나셨다면 카드사에 문의 해 주시기 바랍니다.
+            <ul class="list-dash">
+              <li>신용카드 : D + 3 ~ 5 영업일 이내</li>
+              <li>체크카드 : D+4 ~ 6 영업일 이내</li>
+              <li>내통장 결제 : D+1 ~ 2 영업일 이내</li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+      <!-- // srtcard-gift-wrap -->
+  </div>
+  <!-- // content -->
+  
+
+  <!-- 결제정보확인(모바일금액권) -->
+  <div class="btm-popup-wrap full" id="payment-info-srtcard" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">환불완료</strong>
+          <button class="btn-close" onclick="$('[data-id*=product]').hide();"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body">
+          
+          <div class="product-type2 st3">
+            <div class="img size2"><img src="../images/temp/temp-srtcard.png" alt=""></div>
+            <div class="desc">
+              <div class="tit">
+                <div class="txt">[브랜드명]상품명이다 최대 2줄 나올수잇음 1줄이면 공간줄어듬</div>
+              </div>
+              <div class="info line">
+                <div class="price">45,000원</div>
+                <ul class="list-dash light">
+                  <li>수량 : 1개</li>
+                  <li>MMS 전송</li>
+                  <li>유효일(승차일기준) 2024. 8. 2.</li>
+                  <li>010-52**-74**</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="line-bar mg35"></div>
+          
+          <div class="list-detail">
+            <ul>
+              <li>
+                <div class="label">판매가</div> <div class="cont">900원</div>
+              </li>
+              <li>
+                <div class="label">할인 </div> <div class="cont">-</div>
+              </li>
+              <li>
+                <div class="label">결제금액</div> <div class="cont">900원</div>
+              </li>
+              <li>
+                <div class="label">결제수단</div> <div class="cont">신용카드(신한카드)</div>
+              </li>
+              <li>
+                <div class="label">결제일시</div> <div class="cont">2022. 7. 11.(수) 16:35:25</div>
+              </li>
+              <li>
+                <div class="label">상태</div> <div class="cont">구매완료</div>
+              </li>
+              <li>
+                <div class="label">환불일시</div> <div class="cont">2022. 8. 2.(수) 16:35:25</div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- // wrap -->
+
+<script>
+  function callback(type){ //callback 필요없을시 제거
+    alert(type);
+  }
+
+</script>
+
+</body>
+</html>

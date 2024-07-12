@@ -1,0 +1,436 @@
+
+  <!-- 정차역선택(목록) -->
+  <div class="btm-popup-wrap full" id="pop-station" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit"><span id="station-pos">출발역</span> 선택</strong>
+          <button type="button" class="btn-close" onclick="resetStation()"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body">
+          <div class="station-search">
+            <div class="search">
+              <input type="text" id="station-pos-input" placeholder="출발역 검색">
+              <button type="button" class="btn-search"><i class="ico-search"></i></button>
+            </div>
+            <button type="button" class="btn-map-station" onclick="btmPopClose('#pop-station');btmPopOpen('#pop-map');alertOpen('환승노선은<br>SRT 앱/홈페이지에서만 가능합니다.', ['확인']);"><i class="ico-map-station"></i></button>
+            <button type="button" class="btn-resent" onclick="btmPopClose('#pop-station');btmPopOpen('#pop-resent', resentStationCheck)">최근 조회</button>
+          </div>
+          <div class="tab-type2 top-sticky2 line-bottom">
+            <ul>
+              <li class="on"><a href="javascript:void(0);">전체</a></li>
+              <li><a href="javascript:void(0);">경부선</a></li>
+              <li><a href="javascript:void(0);">호남선</a></li>
+              <li><a href="javascript:void(0);">경부선</a></li>
+              <li><a href="javascript:void(0);">호남선</a></li>
+              <li><a href="javascript:void(0);">경부선</a></li>
+              <li><a href="javascript:void(0);">호남선</a></li>
+              <li><a href="javascript:void(0);">경부선</a></li>
+              <li><a href="javascript:void(0);">호남선</a></li>
+              <li><a href="javascript:void(0);">경부선</a></li>
+              <li><a href="javascript:void(0);">호남선</a></li>
+            </ul>
+          </div>
+            
+          <ul class="list-check-box2">
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="수서">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">서울특별시</div>
+                  <div class="tit">수서</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="수서">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">서울특별시</div>
+                  <div class="tit">수서</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="수서">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">서울특별시</div>
+                  <div class="tit">수서</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="수서">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">서울특별시</div>
+                  <div class="tit">수서</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="수서">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">서울특별시</div>
+                  <div class="tit">수서</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="동탄">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">경기도 화성시</div>
+                  <div class="tit">동탄</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="동탄">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">경기도 화성시</div>
+                  <div class="tit">동탄</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="동탄">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">경기도 화성시</div>
+                  <div class="tit">동탄</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="동탄">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">경기도 화성시</div>
+                  <div class="tit">동탄</div>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="inp-check st3">
+                <input type="checkbox" name="station-check" value="동탄">
+                <span class="ic"><i></i></span>
+                <div class="txt-box">
+                  <div class="txt">경기도 화성시</div>
+                  <div class="tit">동탄</div>
+                </div>
+              </label>
+            </li>
+          </ul>          
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st1" disabled data-btn="stationConfirm" onclick="btmPopClose('#pop-station');setStation();">선택완료</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 정차역선택(지도) -->
+  <div class="btm-popup-wrap full" id="pop-map" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">정차역 선택</strong>
+          <button type="button" class="btn-close" onclick="mapStationInit();"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body" data-id="pop-map-body">
+          <script>
+            $('[data-id=pop-map-body]').load( "map.html" );
+          </script>
+            
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st1" disabled data-btn="stationMapConfirm" onclick="btmPopClose('#pop-map');setMapStation();">선택완료</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--최근이용구간 -->
+  <div class="btm-popup-wrap full" id="pop-resent" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">최근이용구간</strong>
+          <button type="button" class="btn-close" onclick="resetResentStation()"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body">
+
+          <div class="resent-station-wrap">
+            <div class="f-wrap menu-wrap">
+              <button type="button" class="btn-line st2">전체삭제</button>
+              <div class="right">
+                <div class="label">여행 선택</div>
+              </div>
+            </div>
+            <ul class="list-check-box3">
+              <li>
+                <label class="inp-check st3">
+                  <input type="checkbox" name="station-resent">
+                  <span class="ic"><i></i></span>
+                  <button class="btn-del"><i class="ico-del"></i></button>
+                  <div class="txt-box">
+                    <div class="date">6. 28.</div>
+                    <div class="station">
+                      <span class="start">울산통도사</span>
+                      <i class="ico-arr-right"></i>
+                      <span class="arrive">부산</span>
+                    </div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="inp-check st3">
+                  <input type="checkbox" name="station-resent">
+                  <span class="ic"><i></i></span>
+                  <button class="btn-del"><i class="ico-del"></i></button>
+                  <div class="txt-box">
+                    <div class="date">6. 28.</div>
+                    <div class="station">
+                      <span class="start">수서</span>
+                      <i class="ico-arr-right"></i>
+                      <span class="arrive">김천구미</span>
+                    </div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="inp-check st3">
+                  <input type="checkbox" name="station-resent">
+                  <span class="ic"><i></i></span>
+                  <button class="btn-del"><i class="ico-del"></i></button>
+                  <div class="txt-box">
+                    <div class="date">6. 28.</div>
+                    <div class="station">
+                      <span class="start">오송</span>
+                      <i class="ico-arr-right"></i>
+                      <span class="arrive">서대구</span>
+                    </div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+            <div class="no-data">
+              <i class="ico-no-product"></i>
+              <p class="txt">조회된 최근 이용 구간이 없습니다.</p>
+            </div>
+          </div>         
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st1" disabled data-btn="stationResentConfirm" onclick="btmPopClose('#pop-resent');setResentStation();">선택완료</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 달력 -->
+  <div class="btm-popup-wrap full" id="pop-calendar" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit"><span id="day-pos">출발일</span> 선택</strong>
+          <button type="button" class="btn-close" onclick="resetCalendar();"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body" data-id="pop-cal-body">
+            <script>
+              let calType = 'reserve';
+              let textType = '가는날';
+              let todayCheck = true;
+              $('[data-id=pop-cal-body]').load( "calendar.html");
+            </script>
+        </div>
+        <div class="pop-footer bg-light-gray">
+          <div class="time-select">
+            <p class="txt">시간 미 선택 시, 전체 시간 조회</p>
+            <div class="tab-type2" data-evt="tab-block">
+              <ul id="time-list">
+                <!-- 시간 -->
+              </ul>
+            </div>
+          </div>
+          
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st3" onclick="btmPopClose('#pop-calendar');resetCalendar();">취소</button>
+            <button type="button" class="btn-type1 st1" onclick="setCalendar();btmPopClose('#pop-calendar');">적용</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  
+  <!-- 승차인원 선택 -->
+  <div class="btm-popup-wrap full" id="pop-passenger" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">승차인원 선택</strong>
+          <button type="button" class="btn-close" onclick="resetPassenger()"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body" data-id="pop-passenger-body">
+          <script>
+            $('[data-id=pop-passenger-body]').load( "passenger.html", function(){
+              countInput('[data-evt*="inp-number"]', false);
+            });
+          </script>
+        </div>
+        <div class="pop-footer">
+          <p class="txt c-pupple align-c" data-id="txt-passenger">어른 1명</p>
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st3" onclick="resetPassenger();">선택 초기화</button>
+            <button type="button" class="btn-type1 st1" onclick="btmPopClose('#pop-passenger');"><span id="total-passenger">1</span>명 적용</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <script>
+    let startStation = $('#station-start').text();
+    let arriveStation = $('#station-arrive').text();  
+    let stationPos = '';
+    let selectedStation = '';
+    let resentStation = [];
+  
+    // 정차역
+    function setStationPos(dir){
+      stationPos = dir;
+      let txt = dir === 'start' ? '출발역' : dir === 'arrive' ? '도착역' :  ''
+  
+      $('#station-pos').text(txt)
+      $('#station-pos-input').attr('placeholder', txt + ' 검색')
+    };
+  
+    function stationCheck(){
+      $('[name="station-check"]').on('change', function(){
+        selectedStation = $(this).val();
+        $('[name="station-check"]').not($(this)).prop('checked', false);
+        if($('[name="station-check"]:checked').length > 0){
+          $('[data-btn="stationConfirm"]').removeAttr('disabled');
+        }else{
+          $('[data-btn="stationConfirm"]').attr('disabled', 'disabled');
+        }
+      });
+    }
+  
+    function exchagne(btn){
+      startStation = $('#station-start').html();
+      arriveStation = $('#station-arrive').html();
+  
+      $('#station-start').html(arriveStation);
+      $('#station-arrive').html(startStation);   
+
+      if($(btn).hasClass('flip')){
+        $(btn).removeClass('flip');
+        $(btn).addClass('flip-reverse');
+      }else{
+        $(btn).removeClass('flip-reverse');
+        $(btn).addClass('flip');
+      }
+    }
+  
+    function setStation(){
+      let $target =  stationPos === 'start' ? $('#station-start') : stationPos === 'arrive' ? $('#station-arrive') : ''
+      $target.text(selectedStation);
+
+      activeBtn();
+      resetStation();
+    }
+  
+    function resetStation(){
+      selectedStation = '';
+      $('[name="station-check"]').prop('checked', false);
+      $('[data-btn="stationConfirm"]').attr('disabled', 'disabled');
+    }
+  
+    // 지도 정차역
+    function setMapStation(){
+      startStation = $('[data-id="startStation"]').text();
+      arriveStation = $('[data-id="arriveStation"]').text();
+  
+      $('#station-start').text(startStation);
+      $('#station-arrive').text(arriveStation);
+
+      activeBtn();
+      mapStationInit();
+    }
+
+    // 최근이용
+    function resentStationCheck(){
+      $('[name="station-resent"]').on('change', function(){
+        startStation = $(this).parents('.inp-check').find('.start').text();
+        arriveStation = $(this).parents('.inp-check').find('.arrive').text();
+
+        $('[name="station-resent"]').not($(this)).prop('checked', false);
+        if($('[name="station-resent"]:checked').length > 0){
+          $('[data-btn="stationResentConfirm"]').removeAttr('disabled');
+        }else{
+          $('[data-btn="stationResentConfirm"]').attr('disabled', 'disabled');
+        }
+
+      });
+    }
+  
+    function setResentStation(){
+      $('#station-start').text(startStation);
+      $('#station-arrive').text(arriveStation);
+
+      activeBtn();
+      resetResentStation();
+    }
+    function resetResentStation(){
+      $('[name="station-resent"]').prop('checked', false);
+    }  
+  
+    // 달력
+    function callbackCalendar(){
+      let selectedDate = $('#date').text().split('.');
+      let today = ()=>{
+        return selectedDate[0].trim()+'-'+selectedDate[1].trim()+'-'+selectedDate[2].trim() == new Date().getFullYear() + "-"+ (new Date().getMonth() + 1) + "-" + new Date().getDate()
+      }
+      callCalendar(selectedDate[0].trim(), selectedDate[1].trim(), selectedDate[2].trim());
+      timeSet($('#start-time').text().split('시')[0], today());
+    }
+  
+  
+    function setCalendar(){
+      $('#date').text(selectedDayFormat);
+      $('#start-time').text(selectedTime+'시');
+      resetCalendar();
+    }
+
+
+    function activeBtn(){
+      //시간표 , 마이페이지 설정
+      if($('#station-start').find('.placeholder').length <=0  && $('#station-start') !== '' && $('#station-arrive').find('.placeholder').length <=0  && $('#station-arrive') !== ''){
+        $('[data-id=active]').removeAttr('disabled');
+      }else{
+        $('[data-id=active]').attr('disabled', 'disabled');
+      }
+
+    }
+
+  
+  </script>

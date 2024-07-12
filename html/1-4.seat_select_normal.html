@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+</head> 
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt">승차권 예매</span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="tab-type1 top-sticky">
+      <div class="f-wrap">
+        <ul>
+          <li class="on"><div class="line">좌석선택</div></li>
+          <li><a href="javascript:void(0);" class="btn-type6 st2 round btn-floating" onclick="btmPopOpen('#pop-facilities')">편의시설정보</a></li>
+        </ul>
+        <div class="right">
+          <div class="step-process">
+            <ol>
+              <li></li>
+              <li></li>
+              <li class="on"></li>
+              <li></li>
+              <li></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trip-info">
+      <div class="info">
+        <b class="pos">수서</b>
+      </div>
+      <div class="way">
+        <i class="ico-waygo"></i>
+      </div>
+      <div class="info">
+        <div cRlass="pos">
+          <b class="pos">부산</b>
+        </div>
+      </div>
+    </div>
+    <!-- // trip-info -->
+
+    <div class="trip-select-menu">
+      <button class="btn prev" onclick="layerSelectChange('#select1', 2);"><i class="arr">&lt;</i>8호차</button>
+      <div class="txt">SRT 301 (1호차, 일반실)</div>
+      <button class="btn next">２호차<i class="arr">&gt;</i></button>
+    </div>
+    <!-- // trip-select-menu -->    
+
+  <script>
+    const seatOption = [
+      {
+        value:'1',
+        option:'<em>1호차</em> (잔여 3석) 기저귀 교환대',
+        disabled: false,
+      },
+      {
+        value:'2',
+        option:'<em>2호차</em> (잔여 12석) 장거리 전용',
+        disabled: false,
+        selected: true
+      },
+      {
+        value:'3',
+        option:'<em>4호차</em> (잔여 6석)',
+        disabled: false
+      },
+      {
+        value:'4',
+        option:'<em>5호차</em> (잔여 0석) 유아/어린이 동반',
+        disabled: true
+      },
+      {
+        value:'5',
+        option:'<em>6호차</em> (잔여 0석) 자판기',
+        disabled: true
+      },
+      {
+        value:'6',
+        option:'<em>7호차</em> (잔여 22석)',
+        disabled: false
+      },
+      {
+        value:'7',
+        option:'<em>8호차</em> (잔여 4석)',
+        disabled: false
+      },
+    ]
+  </script>        
+  <div class="select-train"><button type="button" class="btn-select2" onclick="selectOpen('select1', seatOption, function(val, text){ console.log(val);})"><span><em>2호차</em> (잔여 12석) 장거리 전용</span> <i class="ico-arr-select2"></i></button></div>
+
+
+    <div class="seat-legend top-sticky" data-top="94">
+      <span class="label"><i class="possible"></i><span>선택가능</span></span>
+      <span class="label"><i class="impossible"></i><span>선택불가</span></span>
+      <div class="right">
+        <span class="selected-seat">선택한 좌석<span class="num"><span data-id="select-seat"></span> / <span class="max" data-id="max-seat">9</span></span></span>
+      </div>
+    </div>
+
+    <!-- seat-list-wrap -->
+    <div class="seat-list-wrap">
+        <div class="seat-wrap seat-text">
+            <div class="seat"><span class="txt">창측</span></div>
+            <div class="seat"><span class="txt">내측</span></div>
+            <div class="seat-center"></div>
+            <div class="seat"><span class="txt">내측</span></div>
+            <div class="seat"><span class="txt">창측</span></div>
+        </div>
+        <!-- 시트 -->
+        <div class="seat-list">
+            
+        </div>
+        <!-- // 시트 -->
+        <div class="seat-wrap seat-text">
+            <div class="seat"><span class="txt">창측</span></div>
+            <div class="seat"><span class="txt">내측</span></div>
+            <div class="seat-center"></div>
+            <div class="seat"><span class="txt">내측</span></div>
+            <div class="seat"><span class="txt">창측</span></div>
+        </div>
+    </div>
+    <!-- // seat-list-wrap -->
+
+  </div>
+  <!-- // content -->
+
+
+  <!--하단 고정버튼-->
+  <div class="fixed-footer-wrap">
+    <div class="btn-wrap">
+      <button type="button" class="btn-type1 st3" style="width:40%">좌석 자동배정</button>
+      <button type="button" class="btn-type1 st1" disabled data-id="btn-complete" onclick="location.href='1-5.goods_check.html'">좌석선택 완료</button>
+    </div>
+  </div> 
+
+</div>
+<!-- // wrap -->
+
+<script>
+  //시설물안내 팝업
+  loadInclude('popup-facilities');
+
+   loading('.seat-list-wrap');
+   setTimeout(() => {
+      loadingHide();
+   }, 300);
+
+  let random = function(){
+      let array = [true, false];
+      return array[Math.floor(Math.random() * array.length)]
+  };
+
+  function setSeat1(){
+    let eng = ['A', 'B', 'C', 'D'];    
+    let data = [];  
+
+    //임시용
+    for(let i=14;i>=1;i--){
+        data.push(
+            {num:i+eng[0], disabled:random()},
+            {num:i+eng[1], disabled:random()},
+            {num:i+eng[2], disabled:random()},
+            {num:i+eng[3], disabled:random()},
+        )
+    }        
+
+    seatHtml(data);
+  }
+
+  function setSeat2(){
+    let eng = ['A', 'B', 'C', 'D'];    
+    let data = [];  
+
+    //임시용
+    for(let i=15;i>=1;i--){
+        data.push(
+            {num:i+eng[0], disabled:random()},
+            {num:i+eng[1], disabled:random()},
+            {num:i+eng[2], disabled:random()},
+            {num:i+eng[3], disabled:random()},
+        )
+    }        
+
+    seatHtml(data, 2, function(windows){
+      windows.unshift('1');
+    });
+  }
+
+  function setSeat3(){
+    let eng = ['A', 'B', 'C', 'D'];    
+    let data = [];  
+
+    //임시용
+    for(let i=12;i>=1;i--){
+        data.push(
+            {num:i+eng[0], disabled:random()},
+            {num:i+eng[1], disabled:random()},
+            {num:i+eng[2], disabled:random()},
+            {num:i+eng[3], disabled:random()},
+        )
+    }
+
+    seatHtml(data, 3);
+  }
+
+  function setSeat4(){
+    let eng = ['A', 'B', 'C', 'D'];    
+    let data = [];  
+
+    //임시용
+    for(let i=12;i>=1;i--){
+        data.push(
+            {num:i+eng[0], disabled:random()},
+            {num:i+eng[1], disabled:random()},
+            {num:i+eng[2], disabled:random()},
+            {num:i+eng[3], disabled:random()},
+        )
+    }        
+    data.unshift(
+      {num: '전동', disabled: false}, 
+      {num: '', disabled: true, empty: true}, 
+      {num: '', disabled: true, empty: true}, 
+      {num: '전동', disabled: true},
+      {num: '장애인', disabled: true},
+      {num: '', disabled: true, empty: true}, 
+      {num: '장애인', disabled: false}, 
+      {num: '장애인', disabled: true}
+    )    
+    
+    seatHtml(data, 4);
+  }
+
+  setSeat1();
+
+  $(document).on('click', '#select1 li button', function(){
+    switch($(this).data('val')) {
+      case 1: setSeat4();
+        break;
+      case 2: setSeat1();
+        break;
+      case 3: setSeat2();
+        break;
+      case 4: setSeat3();
+        break;
+      case 5: setSeat3();
+        break;
+      case 6: setSeat3();
+        break;
+      case 7: setSeat2();
+        break;
+      case 8: setSeat2();
+        break;
+    }
+  });
+
+
+  function layerSelectChange(id, num){
+    $(id).find('li button').removeClass('on');
+    $(id).find('li:nth-child('+num+') button').addClass('on');
+  }
+
+</script>
+
+
+</body>
+</html>

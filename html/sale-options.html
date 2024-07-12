@@ -1,0 +1,271 @@
+  <!-- 할인적용 -->
+  <div class="btm-popup-wrap full" id="pop-sale" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">할인적용</strong>
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body">
+          <!-- sale-seat-wrap -->
+          <div class="sale-seat-wrap">
+            <ul class="seat-list">
+              <li><button class="seat-st">7A<i class="ico-check2"></i></button></li>
+              <li><button class="seat-st on">7A</button></li>
+              <li><button class="seat-st">7A</button></li>
+              <li><button class="seat-st">7A</button></li>
+              <li><button class="seat-st">7A</button></li>
+              <li><button class="seat-st">7A</button></li>
+              <li><button class="seat-st">7A</button></li>
+              <li><button class="seat-st">7A</button></li>
+            </ul>
+            <div class="text">
+              <p class="txt">할인대상 : 5호차 7A 어른</p>
+              <p class="txt">할인적용 : 일반</p>
+            </div>
+            <p class="txt c-light-gray">좌석을 선택하시면, 적용가능한 할인 유형을 확인하실 수 있습니다.</p>
+    
+            <ul class="list-check-box3">
+              <li>
+                <label class="inp-check st3">
+                  <input type="radio" name="check-sale" value="none">
+                  <span class="ic"><i></i></span>
+                  <div class="txt-box">
+                    <div class="txt">선택안함</div>
+                  </div>
+                </label>
+              </li>
+              <li data-id="sale-type">
+                <label class="inp-check st3">
+                  <input type="radio" name="check-sale" value="merit">
+                  <span class="ic"><i></i></span>
+                  <div class="txt-box">
+                    <div class="txt">국가유공자</div>
+                  </div>
+                </label>
+              </li>
+              <li data-id="sale-type">
+                <label class="inp-check st3">
+                  <input type="radio" name="check-sale" value="infant">
+                  <span class="ic"><i></i></span>
+                  <div class="txt-box">
+                    <div class="txt">동반유아</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="inp-check st3">
+                  <input type="radio" name="check-sale" value="sale">
+                  <span class="ic"><i></i></span>
+                  <div class="txt-box">
+                    <div class="txt">할인쿠폰</div>
+                  </div>
+                </label>
+              </li>
+            </ul>        
+          </div>
+          <!-- // sale-seat-wrap -->
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st1" disabled  data-id="active" onclick="btmPopClose('#pop-sale');">적용하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 국가 유공자 할인받기 -->
+  <div class="btm-popup-wrap full" id="pop-sale-merit" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">국가 유공자 할인받기</strong>
+          <button type="button" class="btn-close"><i class="ico-close"></i></button>
+        </div>
+        <div class="tab-type1" data-evt="tab-block">
+          <ul>
+            <li class="on"><a href="javascript:void(0);">무임</a></li>
+            <li><a href="javascript:void(0);">할인</a></li>
+          </ul>
+        </div>
+        <div class="pop-body">
+          
+          <div class="merit-sale-wrap">
+            <div class="form-type-wrap">
+              <div class="form-type1">
+                <span class="label">보훈번호 입력</span>
+                <div class="f-wrap">
+                  <input type="number" class="auto" id="input-merit-num" data-id="inpchk">
+                  <i class="ico-val-check" style="display:none;"></i>
+                </div>
+                <div class="txt-guide-wrap">
+                </div>
+              </div>
+              <div class="form-type1">
+                <span class="label">비밀번호  입력</span>
+                <div class="f-wrap">
+                  <input type="password" class="auto" id="input-pw" data-id="inpchk" maxlength="15">
+                  <i class="ico-val-check" style="display:none;"></i>
+                  <button class="btn-val-view">
+                    <i class="ico-val-view"></i>
+                    <i class="ico-val-view-off"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="form-type1">
+                <span class="label">주민등록번호 입력(앞 6자리 입력하세요.)</span>
+                <div class="f-wrap">
+                  <input type="number" class="auto" id="input-person-num" data-id="inpchk" maxlength="6">
+                  <i class="ico-val-check" style="display:none;"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st1" data-id="merit-active" disabled onclick="btmPopClose('#pop-sale-merit');btmPopOpen('#pop-sale');$('[data-id=active]').removeAttr('disabled');">적용하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  //쿠폰 불러오기 (결제쪽에서는 쿠폰만 단독으로불러옴)
+  loadInclude('popup-coupon');
+  scrollLeft('.sale-seat-wrap .seat-list');
+
+  var selectSeat = '';
+  var saleCheck = '';
+
+  if(saleType === 'normal'){
+    $('[data-id=sale-type]').hide();
+  }
+
+  var pwView = ()=>{
+    $('.btn-val-view').on('click', function(){
+      let $wrap = $(this).parents('.form-type1'); 
+      let $inpPw = $wrap.find('[id*=input-pw]'); 
+      let $icon = $wrap.find('.ico-val-view'); 
+      let $iconOff = $wrap.find('.ico-val-view-off'); 
+      
+      if($inpPw.attr('type') === 'password'){
+        $inpPw.attr('type', 'text');
+        $icon.hide();
+        $iconOff.show();
+      }else{
+        $inpPw.attr('type', 'password');
+        $icon.show();
+        $iconOff.hide();
+      }
+    });
+  }  
+
+  function saleOpt(opt){
+    if(opt.value === 'merit'){ //국가유공자
+      // btmPopClose('#pop-sale', closeInit); 닫을때 초기화됨
+      btmPopClose('#pop-sale');
+      btmPopOpen('#pop-sale-merit', pwView);
+      
+      inputFocus('.form-type1');
+      inpChekc('#input-merit-num');
+      inpChekc('#input-person-num');
+      meritBtnActive();
+
+    }else if(opt.value === 'sale'){ //할인쿠폰
+      // btmPopClose('#pop-sale', closeInit); 닫을때 초기화됨
+      btmPopClose('#pop-sale');
+      btmPopOpen('#pop-sale-coupon');
+
+    }else{ //기타
+      saleCheck = opt.value;
+      if(saleCheck !== '') $('[data-id=active]').removeAttr('disabled');
+    }
+  }
+
+  //할인적용
+  $('[name="check-sale"]').on('change', function(){
+    saleOpt(this)
+  });
+  $('[name="check-sale"]').parents('label').on('click', function(){
+    saleOpt($(this).find('input').get(0));
+  });
+
+  $('.seat-list button').on('click', function(){
+    $('.seat-list button').removeClass('on');
+    $(this).addClass('on');
+    selectSeat = $(this).text();
+    if(saleCheck !== '') $('[data-id="active"]').removeAttr('disabled');
+  });
+
+  //국가유공자
+  function pwView(){
+      $('.btn-val-view').on('click', function(){
+      let $wrap = $(this).parents('.form-type1'); 
+      let $inpPw = $wrap.find('[id*=input-pw]'); 
+      let $icon = $wrap.find('.ico-val-view'); 
+      let $iconOff = $wrap.find('.ico-val-view-off'); 
+      
+      if($inpPw.attr('type') === 'password'){
+        $inpPw.attr('type', 'text');
+        $icon.hide();
+        $iconOff.show();
+      }else{
+        $inpPw.attr('type', 'password');
+        $icon.show();
+        $iconOff.hide();
+      }
+    });
+  }
+
+  function inpChekc(inp){
+    $(inp).on('keyup', function(){
+      let $inp = $(this);
+      let $icon = $inp.next('.ico-val-check');    
+      let checked = $inp.length > 0 ? true : false
+
+      if(checked){
+        $icon.show();
+      }else{
+        $icon.hide();
+      }
+    });
+  }
+
+  function meritBtnActive(){
+    $('.merit-sale-wrap input').on('keyup', function(){
+      let checked = $.map($('.merit-sale-wrap input'), function(el){
+        return el.value
+        });
+        if(!checked.includes('')) $('[data-id="merit-active"]').removeAttr('disabled');
+        else $('[data-id="merit-active"]').attr('disabled', 'disabled');
+    });
+  }
+
+
+
+  //init
+  // $('.btm-popup-wrap .btn-close').on('click', function(){
+  //   closeInit()
+  // });
+
+  function closeInit(){
+    //할인적용
+    $('[name="check-sale"]').prop('checked', false);
+    $('[data-id="active"]').attr('disabled', 'disabled');
+
+    //국가유공자
+    $('.merit-sale-wrap input').val('');
+    $('.merit-sale-wrap .form-type1').removeClass('active');
+    $('.merit-sale-wrap .form-type1').removeClass('has-value');
+    $('.merit-sale-wrap .ico-val-check').hide();
+    $('[data-id="merit-active"]').attr('disabled', 'disabled');  
+    if(!$('.ico-val-view-off').is(':hidden')) $('.ico-val-view-off').click();
+    
+    //쿠폰
+    copuonCloseInit();
+  }
+
+</script>
+

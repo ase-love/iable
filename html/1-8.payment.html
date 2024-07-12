@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+<!-- 애플페이 -->
+<script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
+
+</head> 
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt">승차권 예매</span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="tit-wrap top-sticky">
+      <h2 class="tit-type3"><span>결제하기</span>
+      </h2>
+      <div class="float-right">
+        <div class="step-process">
+          <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="on"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- 결제하기 -->
+    <div class="payment-wrap">
+      <!-- 승차권1 -->
+      <div class="payment-ticket-wrap">
+        <h3 class="tit-type2">
+          <i class="ico-ticket"></i>
+          <span class="c-pupple">승차권1</span>
+          <div class="right">
+            6호차 4C(어른)
+          </div>
+        </h3>
+        <div class="payment-desc">
+           <strong class="tit">결제상세</strong>
+           <ul class="list">
+            <li>승차권 금액<div class="right">52,900원</div></li>
+            <li>기본 운임 할인<div class="right">-900원</div></li>
+           </ul>
+           <div class="total">
+            <span class="label">승차권 결제 예정 금액<!-- <i class="ico-question"></i> --></span>
+            <div class="right">41,600원</div>
+           </div>
+        </div>
+      </div>
+
+      <div class="line-bar2"></div>
+
+      <!-- 승차권2 -->      
+      <div class="payment-ticket-wrap">
+        <h3 class="tit-type2">
+          <i class="ico-ticket"></i>
+          <span class="c-pupple">승차권2</span>
+          <div class="right">
+            6호차 4C(어른)
+          </div>
+        </h3>
+        <div class="payment-desc">
+           <strong class="tit">결제상세</strong>
+           <ul class="list">
+            <li>승차권 금액<div class="right">52,900원</div></li>
+            <li>기본 운임 할인<div class="right">-900원</div></li>
+            <li class="c-blue">결합상품 구매조건 혜택 (20%)<div class="right">-10,400원</div></li>
+           </ul>
+           <div class="total">
+            <span class="label">승차권 결제 예정 금액<!-- <i class="ico-question"></i> --></span>
+            <div class="right">41,600원</div>
+           </div>
+        </div>
+      </div>
+
+     <div class="line-bar"></div>
+     <dl class="dl-box">
+      <dt>할인받기</dt>
+      <dd>
+        <div class="f-wrap">
+          <span>-10%</span>
+          <button type="button" class="btn-type5 st7 round f-12" onclick="loadSaleOptions()">선택하기</button>
+        </div>
+      </dd>
+     </dl>
+
+     <div class="line-bar"></div>
+
+     <dl class="dl-box">
+      <dt>정상 운임 금액</dt>
+      <dd>104,000원</dd>
+     </dl>
+     <dl class="dl-box">
+      <dt>할인금액</dt>
+      <dd class="c-blue">-20,800원</dd>
+     </dl>
+     <dl class="dl-box c-pupple">
+      <dt>오늘 결제 예정 금액</dt>
+      <dd>73,200원</dd>
+     </dl>
+
+     <div class="line-bar"></div>
+
+     <!-- 결제수단 -->
+     <dl class="payment-method">
+      <dt>결제수단 선택
+       <p class="txt">주문 내역을 확인하고, 결제에 동의합니다.</p>
+      </dt>
+      <dd>
+        <div class="method-list">
+          <div class="list">
+            <button type="button"><i class="cash"></i><span>내통장결제</span></button>
+            <button type="button"><i class="card"></i><span>신용카드</span></button>
+            <button type="button" class="pinpay">
+              <div class="both-box">
+                  <div class="both">
+                      <strong>PIN Pay</strong>
+                  </div>
+                  <div class="both">
+                      <b>3천원 캐시백</b>
+                      <!-- <span>(첫 결제 고객대상)</span> -->
+                  </div>
+              </div>
+            </button>
+          </div>
+         </div>
+      </dd>
+    </dl>
+
+    </div>
+    <!-- // payment-wrap -->
+  </div>
+  <!-- // content -->
+
+
+  <!-- 모바일 금액권 적용 -->
+  <div class="btm-popup-wrap full" id="pop-giftcard" >
+    <div class="pop-wrap">
+      <div class="popup">
+        <div class="pop-header">
+          <strong class="tit">모바일 금액권 적용</strong>
+          <button type="button" class="btn-close" onclick="giftcardCloseInit();"><i class="ico-close"></i></button>
+        </div>
+        <div class="pop-body bg-gray">
+          <div class="mobile-giftcard-setting">
+            <!-- sale-seat-wrap -->
+            <div class="sale-seat-wrap">
+              <div class="bg">
+                <ul class="seat-list">
+                  <li><button class="seat-st">7A<i class="ico-check2"></i></button></li>
+                  <li><button class="seat-st on">7A</button></li>
+                  <li><button class="seat-st">7A</button></li>
+                  <li><button class="seat-st">7A</button></li>
+                  <li><button class="seat-st">7A</button></li>
+                  <li><button class="seat-st">7A</button></li>
+                  <li><button class="seat-st">7A</button></li>
+                  <li><button class="seat-st">7A</button></li>
+                </ul>
+                <div class="text">
+                  <p class="txt">할인대상 : 5호차 7A 어른</p>
+                  <p class="txt">할인적용 : 할인없음</p>
+                </div>
+                <p class="txt c-light-gray">좌석 당 1개의 금액권만 사용할 수 있습니다.</p>
+              </div>
+      
+              <ul class="list-check-box3">
+                <li>
+                  <label class="inp-check st3">
+                    <input type="checkbox" name="check-none">
+                    <span class="ic"><i></i></span>
+                    <div class="txt-box">
+                      <div class="txt">선택안함</div>
+                    </div>
+                  </label>
+                </li>
+              </ul>        
+            </div>
+            <!-- // sale-seat-wrap -->
+            <div class="list-coupon">
+              <ul>
+                <li>
+                  <div class="completed">
+                    <div>7A<br>적용완료</div>
+                  </div>
+                  <button class="coupon-type1">
+                    <div class="inner-wrap">
+                      <strong class="tit">SRT 50,000원 금액권</strong>
+                      <div class="txt">일반승차권 최소 결제 금액 7,900원</div>
+                      <div class="txt">2023. 8. 2. ~ 2023. 9. 12.</div>
+                      <div class="price">
+                        <b>23,000원</b>
+                        <span class="tag">보유잔액</span>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+                <li>
+                  <button class="coupon-type1">
+                    <div class="inner-wrap">
+                      <strong class="tit">SRT 50,000원 금액권</strong>
+                      <div class="txt">일반승차권 최소 결제 금액 7,900원</div>
+                      <div class="txt">2023. 8. 2. ~ 2023. 9. 12.</div>
+                      <div class="price">
+                        <b>23,000원</b>
+                        <span class="tag">보유잔액</span>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+                <li>
+                  <button class="coupon-type1">
+                    <div class="inner-wrap">
+                      <strong class="tit">SRT 50,000원 금액권</strong>
+                      <div class="txt">일반승차권 최소 결제 금액 7,900원</div>
+                      <div class="txt">2023. 8. 2. ~ 2023. 9. 12.</div>
+                      <div class="price">
+                        <b>23,000원</b>
+                        <span class="tag">보유잔액</span>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+                <li>
+                  <button class="coupon-type1">
+                    <div class="inner-wrap">
+                      <strong class="tit">SRT 50,000원 금액권</strong>
+                      <div class="txt">일반승차권 최소 결제 금액 7,900원</div>
+                      <div class="txt">2023. 8. 2. ~ 2023. 9. 12.</div>
+                      <div class="price">
+                        <b>23,000원</b>
+                        <span class="tag">보유잔액</span>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer bg-gray">
+          <div class="btn-wrap">
+            <button type="button" class="btn-type1 st1" data-id="coupon-active" disabled onclick="btmPopClose('#pop-giftcard');giftcardCloseInit();">적용하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+</div>
+<!-- // wrap -->
+
+<script>
+  //승차권 발권 동의
+  loadInclude('pop-ticket-agree', null, function(){
+    popOpen('#pop-ticket-agree');
+  });
+
+    
+  // 세일옵션
+  saleType = 'normal';  
+  function loadSaleOptions(){
+    loadInclude('sale-options', null, function(){
+      btmPopOpen('#pop-sale');
+    });
+  }
+
+</script>
+
+
+
+<script>
+  //모바일 금액권 팝업
+  $('.seat-list button').on('click', function(){
+    $('.seat-list button').removeClass('on');
+    $(this).addClass('on');
+  });
+
+  toggleClassList('.list-coupon li button');
+  giftcardBtnActive();
+
+  function giftcardBtnActive(){
+    $('.coupon-type1').on('click', function(){
+      $('[data-id="coupon-active"]').removeAttr('disabled');
+      $('[name="check-none"]').prop('checked', false);
+    });
+    $('[name="check-none"]').on('change', function(){
+      $('.list-coupon li button').removeClass('on');
+      if($(this).is(':checked')){
+        $('[data-id="coupon-active"]').removeAttr('disabled');
+      }else{
+        $('[data-id="coupon-active"]').attr('disabled', 'disabled');
+      }
+      // 
+    });
+  }
+
+  
+  //초기화    
+  function giftcardCloseInit(){
+    $('.coupon-type1').removeClass('on');
+    $('[name="check-none"]').prop('checked', false);
+    $('[data-id="coupon-active"]').attr('disabled', 'disabled'); 
+  }  
+
+</script>
+
+</body>
+</html>

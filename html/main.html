@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<!-- <meta name="theme-color" content="#7030A0"> -->
+<title></title>
+
+<link rel="shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+</head>
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header transparent scroll-white">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="logo"><i class="ico-logo"></i></a>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-chatbot"><i class="ico-chatbot"></i></button>
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+      <!-- main-wrap -->
+      <div class="main-wrap">
+        <!-- 비주얼 -->
+        <div class="visual-slide">
+          <div class="swiper-container">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide" data-bg="#F1F2F6">
+                    <a href="javascript:void(0);">
+                      <img src="../images/temp/temp-main-banner.jpg" alt="">
+                    </a>
+                  </li>
+                  <li class="swiper-slide" data-bg="#FFF4D0">
+                    <a href="javascript:void(0);">
+                      <img src="../images/temp/temp-main-banner2.jpg" alt="">
+                    </a>
+                  </li>
+                  <li class="swiper-slide" data-bg="#F1F2F6">
+                    <a href="javascript:void(0);">
+                      <img src="../images/temp/temp-main-banner.jpg" alt="">
+                    </a>
+                  </li>
+                  <li class="swiper-slide" data-bg="#FFF4D0">
+                    <a href="javascript:void(0);">
+                      <img src="../images/temp/temp-main-banner2.jpg" alt="">
+                    </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="swiper-gage"><span class="bar"></span></div>
+          <div class="swiper-menu">
+            <span class="fraction"></span>
+            <button class="play-start" style="display: none;"><i class="ico-play-start"></i></button>
+            <button class="play-stop"><i class="ico-play-stop"></i></button>
+            <!-- <a href="6.event_list.html" class="more-view"><i class="ico-more-view"></i></a> -->
+          </div>
+        </div>
+        <!-- // 비주얼 -->  
+        <!-- list-category -->
+        <div class="list-category st3">
+          <ul>
+            <li>
+              <a href="1-1.book_home.html">
+                <span class="icon"><i class="ico-cate-srt"></i></span>
+                <span class="txt">승차권 예매</span>
+                <span class="tag">할인혜택</span>
+              </a>
+            </li>
+            <li>
+              <a href="2.schedules.html">
+                <span class="icon"><i class="ico-cate-times"></i></span>
+                <span class="txt">시간표 조회</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <span class="icon"><i class="ico-cate-trip"></i></span>
+                <span class="txt">티플여행</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <span class="icon"><i class="ico-cate-market"></i></span>
+                <span class="txt">풍요마켓</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <span class="icon"><i class="ico-cate-giftcard2"></i></span>
+                <span class="txt">SRT 금액권</span>
+                <spa class="tag">예매혜택</spa>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- // list-category -->
+        <div class="main-noti">
+          <a href="javascript:void(0);">
+            <span class="label">공지</span>
+            <span class="txt">승차권 예약 발매일 조정</span>
+            <span class="arr"></span>
+          </a>
+        </div>      
+        <!-- 배너 -->
+        <!-- <div class="banner-wrap">
+          <div class="banner-slide-list" id="slide-banner">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <a href="70discount/index.html">
+                        <img src="../images/banner/banner-per-sale.jpg" alt="">
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img src="../images/banner/banner-plus-coupon.jpg" alt="">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div> -->
+        <!-- // 배너 -->
+
+        
+
+        <!-- 오늘의 여행상품 -->
+        <div class="today-product-wrap">
+          <div class="tit-wrap vt">
+            <div class="left">
+              <p class="txt light">홍길동님을 위한</p>
+              <h2 class="tit-type4">오늘의 여행상품</h2>
+            </div>
+            <div class="right bottom">
+              <a href="3-6.magagine.html" class="btn-plus-more"><i class="ico-plus-more"></i></a>
+            </div>
+          </div>
+          <!-- slide-type1 -->
+          <div class="slide-type1 st7" id="slide-magazine">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <a href="3-1-1.trip_detail.html" class="product-type3 st2">
+                        <button class="btn-favorite"><i class="ico-heart"></i></button>
+                        <div class="img">
+                          <img src="../images/temp/temp-product3.jpg" alt="">
+                        </div>
+                        <div class="desc">
+                          <span class="label"><i class="ico-mapidx"></i><span>서울/수서역</span></span>
+                          <span class="tit">부산 아쿠아리움 입장권 아쿠아리움 (2줄까지) 부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)</span>
+                          <span class="account">
+                            <!-- <div class="price-org">44,000</div> -->
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">40,000<span class="won">원</span></span>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="3-1-1.trip_detail.html" class="product-type3 st2">
+                        <button class="btn-favorite"><i class="ico-heart"></i></button>
+                        <div class="img img-prd">
+                          <img src="../images/temp/temp-product.png" alt="">
+                        </div>
+                        <div class="desc">
+                          <span class="label"><i class="ico-mapidx"></i><span>서울/수서역</span></span>
+                          <span class="tit">부산 아쿠아리움 입장권 아쿠아리움 (2줄까지) 부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)</span>
+                          <span class="account">
+                            <div class="price-org">44,000</div>
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">40,000<span class="won">원</span></span>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="3-1-1.trip_detail.html" class="product-type3 st2">
+                        <button class="btn-favorite"><i class="ico-heart"></i></button>
+                        <div class="img">
+                          <img src="../images/temp/temp-product3.jpg" alt="">
+                        </div>
+                        <div class="desc">
+                          <span class="label"><i class="ico-mapidx"></i><span>서울/수서역</span></span>
+                          <span class="tit">부산 아쿠아리움 입장권 아쿠아리움 (2줄까지) 부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)</span>
+                          <span class="account">
+                            <div class="price-org">44,000</div>
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">40,000<span class="won">원</span></span>
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="3-1-1.trip_detail.html" class="product-type3 st2">
+                        <button class="btn-favorite"><i class="ico-heart"></i></button>
+                        <div class="img">
+                          <img src="../images/temp/temp-product3.jpg" alt="">
+                        </div>
+                        <div class="desc">
+                          <span class="label"><i class="ico-mapidx"></i><span>서울/수서역</span></span>
+                          <span class="tit">부산 아쿠아리움 입장권 아쿠아리움 (2줄까지) 부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)부산 아쿠아리움 입장권 아쿠아리움 (2줄까지)</span>
+                          <span class="account">
+                            <div class="price-org">44,000</div>
+                            <span class="sale">10%<i class="ico-sale-dowm"></i></span>
+                            <span class="price">40,000<span class="won">원</span></span>
+                          </span>
+                        </div>
+                      </a>
+                    </li>                    
+                </ul>
+            </div>
+          </div>
+          <!-- // slide-type1 -->
+        </div>
+        <!-- // 오늘의 여행상품 -->     
+
+        <!-- 이달의 추천상품-->
+        <div class="reocment-product-wrap">
+          <div class="tit-wrap">
+            <div class="left">
+              <h2 class="tit-type4">이달의 추천상품</h2>
+              <p class="txt light">열차 예매와 함께 미리 챙기면 좋아요.</p>
+            </div>
+          </div>
+          <div class="img">
+            <img src="../images/temp/temp-busan.jpg" alt="">
+          </div>
+        </div>
+        <!-- // 이달의 추천상품 -->
+
+        <div class="devider-line"></div>
+
+        <!-- 얼리버드 승차권-->
+        <div class="earlybird-ticket-wrap">
+          <div class="tit-wrap">
+            <div class="left">
+              <h2 class="tit-type4">좌석 매진 전,
+                <br>SRT 노선별 인기 얼리버드 승차권</h2>
+              <p class="txt light">노선별 예매율 상위 3개 열차</p>
+            </div>
+          </div>
+          <div class="line-tab">
+            <button type="button" class="on">경부선</button>
+            <button type="button">호남선</button>
+            <button type="button">경전선</button>
+            <button type="button">동해선</button>
+            <button type="button">전라선</button>
+          </div>
+          <div class="ticket-time-table">
+            <ul class="table-header">
+              <li class="num"><i class="ico-time-srt"></i></li>
+              <li class="train">열차</li>
+              <li class="start">출발</li>
+              <li class="arrive">도착</li>
+              <li class="sale">할인율</li>
+              <li class="price">운임요금</li>
+            </ul>
+            <div class="table-body">
+              <ul class="time-list">
+                <li>
+                  <a href="javascript:void(0);" class="info">
+                    <div class="num"><span>1</span></div>
+                    <div class="train">374</div>
+                    <div class="start"><span class="name">부산</span><span class="time">10:00</span></div>
+                    <div class="arrive"><span class="name">수서</span><span class="time">23:39</span></div>
+                    <div class="sale"><span class="per">40%</span><i class="dn"></i></div>
+                    <div class="price">
+                      <span class="acc">31,300원</span><span class="prev">52,100원</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" class="info">
+                    <div class="num"><span>2</span></div>
+                    <div class="train">374</div>
+                    <div class="start"><span class="name">부산</span><span class="time">10:00</span></div>
+                    <div class="arrive"><span class="name">수서</span><span class="time">23:39</span></div>
+                    <div class="sale"><span class="per">40%</span><i class="dn"></i></div>
+                    <div class="price">
+                      <span class="acc">31,300원</span><span class="prev">52,100원</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" class="info">
+                    <div class="num"><span>3</span></div>
+                    <div class="train">374</div>
+                    <div class="start"><span class="name">부산</span><span class="time">10:00</span></div>
+                    <div class="arrive"><span class="name">수서</span><span class="time">23:39</span></div>
+                    <div class="sale"><span class="per">40%</span><i class="dn"></i></div>
+                    <div class="price">
+                      <span class="acc">1,300원</span><span class="prev">52,100원</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <div class="full align-c"><span class="txt-info">기본 할인, 열차조정, 좌석 매진에 따라 변동될 수 있어요.</span></div>
+            <button class="btn-type1 st1"><span>매진 전, 예매하기</span></button>
+          </div>
+        </div>
+        <!-- // 얼리버드 승차권 -->
+
+        <!-- 열차 이용 꿀팁 -->
+        <div class="srt-tip-wrap">
+          <div class="tit-wrap vt">
+            <div class="left">
+              <h2 class="tit-type4">열차 이용 꿀팁</h2>
+              <p class="txt light">SRT 이럴 땐, 이렇게 이용하세요.</p>
+            </div>
+            <div class="right">
+              <a href="javascript:void(0);" class="btn-plus-more"><i class="ico-plus-more"></i></a>
+            </div>
+          </div>
+          <div class="slide-type1 st5" id="slide-tip">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <div class="img">
+                          <img src="../images/temp/temp-banner-pet.jpg" alt="">
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <div class="img">
+                          <img src="../images/temp/temp-banner-pet.jpg" alt="">
+                        </div>
+                      </a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <!-- // SRT 이용 꿀팁 -->
+
+        <!-- 배너 
+        <div class="banner-wrap2">
+          <div class="line-bar"></div>
+          <div class="banner-slide-list" id="slide-etc">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img src="../images/temp/temp-banner4.jpg" alt="" style="height:130px;">
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img src="../images/temp/temp-banner4.jpg" alt="" style="height:130px;">
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="javascript:void(0);">
+                        <img src="../images/temp/temp-banner4.jpg" alt="" style="height:130px;">
+                      </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-pagination inside-bottom-left"></div>
+          </div>
+          <div class="line-bar"></div>
+        </div>
+       // 배너 -->
+
+        <div class="main-faq-wrap">
+          <h3 class="faq-tit">궁금해요(FAQ)</h3>
+          <!-- list-type3 -->
+          <div class="list-type3" data-evt="toggle-list">
+            <ul>
+              <li class="on">
+                <button class="desc">
+                  <i class="ic-toggle"></i>
+                  <p class="tit">SRT 할인승차권 대중교통 소득공제 되나요?</p>
+                </button>
+                <div class="detail" style="display:block">
+                  <div class="txt">SRT플레이 할인승차권은 여객운송업 품목에 해당되지 않아 대중교통 소득공제가 불가합니다. 단, 신용카드 소득공제는 가능한 것을 참고해 주세요.</div>
+                </div>
+              </li>
+              <li>
+                <button class="desc">
+                  <i class="ic-toggle"></i>
+                  <p class="tit">SR 회원 인증이 언제 필요한가요?</p>
+                </button>
+                <div class="detail">
+                  <div class="txt">SRT플레이 할인승차권은 여객운송업 품목에 해당되지 않아 대중교통 소득공제가 불가합니다. 단, 신용카드 소득공제는 가능한 것을 참고해 주세요.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- // list-type3 -->
+        </div>
+
+        <div class="help-wrap">
+          <h3 class="tit-type4 align-c">홍길동님, 도움이 필요하신가요?</h3>
+          <!-- list-category -->
+          <div class="list-category-ver">
+            <ul>
+              <li>
+                <a href="4-5.notice.html">
+                  <span class="icon"><i class="ico-cate-noti"></i></span>
+                  <div class="desc">
+                    <b>공지사항</b>
+                    <p class="txt">이벤트 당첨 결과, 긴급한 서비스 점검 등 
+                      <br>안내사항을 확인하세요.</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="4-6.faq.html">
+                  <span class="icon"><i class="ico-cate-faq"></i></span>
+                  <div class="desc">
+                    <b>자주 묻는 질문</b>
+                    <p class="txt">결제 취소, 환불, 할인, 시설문의 등 
+                      <br>주요 질문과 답변을 살펴보세요.</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="4-7.write_us.html">
+                  <span class="icon"><i class="ico-cate-qna"></i></span>
+                  <div class="desc">
+                    <b>1:1 문의</b>
+                    <p class="txt">운영시간이 아니어도 좋아요.
+                      <br>서비스 개선과 요청사항을 등록해 주세요.</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <span class="icon"><i class="ico-cate-chatbot"></i></span>
+                  <div class="desc">
+                    <b>챗봇 상담</b>
+                    <p class="txt">세심한 도움이 필요할 때 문의하세요. 
+                      <br>최대한 빠르게 도와드릴게요.</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- // list-category -->
+        </div>
+        
+        <div class="friendship-wrap">
+          <h3 class="tit-type4">우리, 친구해요 :)</h3>
+          <div class="list-menu3">
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/srtplay/">
+                  <div class="desc">
+                    <div class="txt">
+                      정차역 인근 여행지 집중 탐방! 
+                      <br>SRT와 여행하는 새로운 친구를
+                      <br>만나보세요.
+                    </div>
+                    <div class="go"><span>바로가기</span><i class="ico-arr-right2"></i></div>
+                  </div>
+                  <div class="icon">
+                    <img src="../images/common/sns-plus-instagram.svg" alt="">
+                  </div>
+                </a>
+              </li>
+              <!-- <li>
+                <a href="https://pf.kakao.com/_xocxiYxb">
+                  <div class="desc">
+                    <div class="txt">
+                      이미 수십만 친구와 여행소식을
+                      <br>나누고, 챗봇 채팅으로 함께하고
+                      <br>있어요. 
+                    </div>
+                    <div class="go"><span>바로가기</span><i class="ico-arr-right2"></i></div>
+                  </div>
+                  <div class="icon">
+                    <img src="../images/common/sns-plus-cacao.svg" alt="">
+                  </div>
+                </a>
+              </li> -->
+              <li>
+                <a href="https://www.youtube.com/@tiple_official">
+                  <div class="desc">
+                    <div class="txt">
+                      인기 여행지의 다양한 정보를
+                      <br>유튜브에서 확인하세요.
+                      <br>공식 채널 ‘티플'입니다.
+                    </div>
+                    <div class="go"><span>바로가기</span><i class="ico-arr-right2"></i></div>
+                  </div>
+                  <div class="icon">
+                    <img src="../images/common/sns-plus-youtube.svg" alt="">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="awards-wrap">
+          <!-- list-type3 -->
+          <div class="list-type3" data-evt="toggle-list">
+            <ul>
+              <li class="on">
+                <button class="desc">
+                  <i class="ic-toggle"></i>
+                  <p class="tit">AWARDS</p>
+                </button>
+                <div class="detail" style="display:block">
+                  <ul class="list-dot light">
+                    <li>한국관광공사 성장관광벤처사업 사장상 수상</li>
+                    <li>문화체육관광부 기술혁신형 성장관광벤처기업 선정</li>
+                    <li>대중소농어업협력재단 협력이익공유제 선정</li>
+                    <li>중소벤처기업부 기술혁신형 중소기업(Inno-Biz) 확인</li>
+                    <li>벤처기업협회 정회원사</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- // list-type3 -->
+        </div>
+
+      </div>
+      <!-- // main-wrap -->
+  </div>
+  <!-- // content -->
+
+
+  <!-- 아이폰 툴팁 -->
+  <div class="tooltip-home">
+    <button type="button" class="close" onclick="$('.tooltip-home').hide();"><i class="ico-close"></i></button>
+    <img src="../images/common/ico-srtplay-rect.svg" alt="">
+    <i class="ico-iphone-home-plus"></i>
+    <div class="desc">
+      빠르고 간편하게 이용하시려면
+      <br>아래의 아이콘 <i class="ico-homeup"></i>를 누르고
+      <br>홈 화면에 추가해 주세요 :)
+    </div>
+  </div>
+
+  <!-- 내티켓 툴팁 -->
+  <div class="tooltip-myticket">
+    <!-- <button type="button" class="close"><i class="ico-close"></i></button> -->
+    <div class="inner">
+      <i class="ico-ticket-srt2"></i>
+      <div class="desc">
+        <p>[ D-3 ] 승차권(수서 > 울산통도사, SRT301)</p>
+        <p>2023. 00. 00.(화) 14:00 출발</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- // wrap -->
+
+<script>
+  //footer include
+  loadInclude('footer', null, function(){
+    $('.footer').addClass('notch');
+  });
+
+let visualSlider = undefined;
+function visualSlide(){
+
+  let gage = 0;
+  let autoTimer = false;
+  if(visualSlider != undefined){
+    visualSlider.destroy();
+    visualSlider = undefined; 
+  }
+  visualSlider = slider('.visual-slide', {
+    loop: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    freeMode: false,
+    slidesPerView: 1,
+    pagination: {
+      el: ".visual-slide .fraction",
+      type: "fraction",
+    },    
+    on: {
+        slideChangeTransitionStart: function () {
+          gage = 0;
+          setGage()
+        }
+      }     
+  });
+
+  setHeight();
+  function setHeight(){
+    $('.visual-slide .swiper-slide').css('height', 'auto');
+    $('.visual-slide .swiper-slide').height($('.visual-slide').height());
+  }
+  let width = $(window).width();
+    $(window).resize(function(e){
+      if($(window).width() != width){
+        setHeight();
+       }
+       width = $(window).width();
+    });   
+
+  setGage();
+  function setGage(){
+    if(gage >= 100) {
+      gage = 0;
+    }
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function(){
+      if(gage >= 100) {
+        gage = 0;
+        visualSlider.slideNext();
+      }
+      gage += 1;
+      $('.swiper-gage .bar').css('width', gage +'%');
+    }, 35)
+  }  
+
+  $('.visual-slide .play-stop').on('click', function(){
+    clearInterval(autoTimer)
+  });
+
+  $('.visual-slide .play-start').on('click', function(){
+    setGage()
+  });
+}
+
+
+$(window).on('load', function(){
+  visualSlide();
+});
+
+  //상단 배너
+  slider('#slide-banner', {
+    loop: true,
+    
+    freeMode: false,
+    slidesPerView: 1,
+    pagination: {
+      el: "#slide-banner .swiper-pagination",
+      clickable: true,
+    },
+  });  
+
+  //인기여행지
+  slider('#slide-favorite');
+
+  //매거진
+  slider('#slide-magazine');
+
+  // srt 이용 꿀팀
+//SRT 이용 팁 배너
+// slider('#slide-tip', {
+//     freeMode: false,
+//     centeredSlides: true,
+//     slidesPerView: 'auto',
+//     spaceBetween: 8,
+//     pagination: {
+//       el: "#slide-tip .swiper-pagination",
+//       clickable: true,
+//     },
+// }); 
+
+slider('#slide-tip');
+
+  // 하단배너
+  slider('#slide-etc', {
+    loop: true,
+    
+    freeMode: false,
+    slidesPerView: 1,
+    pagination: {
+      el: "#slide-etc .swiper-pagination",
+      clickable: true,
+    },
+  });  
+  
+  //내티켓 툴팁
+  tooltipMyticket();
+  function tooltipMyticket(){
+	  $('.tooltip-myticket').show();
+    setTimeout(function(){
+      $('.tooltip-myticket').addClass('on');
+    }, 1000);
+    setTimeout(function(){
+      $('.tooltip-myticket').removeClass('on');
+    }, 5000);
+    setTimeout(function(){
+        $('.tooltip-myticket').hide();
+    }, 5500);
+  }
+
+
+// 메인배너에 걸칠때 위로 스크롤올림
+// function resetScroll(){
+//   let t = $(window).scrollTop();
+//     if(t <= $('.main-wrap .visual-slide').height()){
+//       $(window).scrollTop(0);
+//     }
+// }
+
+// setInterval(function(){
+//   resetScroll();
+// }, 1500)
+
+// window.addEventListener('beforeunload', (event) => {
+//            alert('beforeunload')
+//         });
+
+
+//         window.addEventListener('pagehide', (event) => {
+//           alert('pagehide')
+// });
+
+$(function(){
+            let top = $(this).scrollTop();
+
+            if(top > 0 ){
+              $('body').addClass('scrolling');
+              if($('header').length > 0) $('header').addClass('scrolling');
+            }else{
+              $('body').removeClass('scrolling');
+              if($('header').length > 0) $('header').removeClass('scrolling');
+            }
+            
+            if(stickyPos != 0){
+              if(top > stickyPos - 50) $('header').addClass('attach-sticky')
+              else $('header').removeClass('attach-sticky')
+            }
+            
+            if(top > titlePos){
+              $('.header .tit-txt.hide').fadeIn();
+            }else{
+              $('.header .tit-txt.hide').fadeOut();
+            }
+         });
+         //내티켓 툴팁
+$(window).on('load', function(){
+
+            let top = $(this).scrollTop();
+            if(top <= $('.main-wrap .visual-slide').height()){
+                  $("html, body").animate({ scrollTop: 0 }, "slow");
+            }
+         });
+
+
+
+</script>
+
+</body>
+</html>

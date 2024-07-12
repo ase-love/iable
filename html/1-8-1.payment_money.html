@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no"/>
+<title></title>
+
+<link rel=" shortcut icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon.ico">
+<link rel="icon" href="../images/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../images/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="../images/favicon/favicon-72.png" sizes="72x72">
+<link rel="icon" href="../images/favicon/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../images/favicon/favicon.png" />
+
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css" />
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/ui.js"></script>
+<!-- 퍼블만 사용-->
+<script src="../js/ui-pub.js"></script>
+
+<!-- 애플페이 -->
+<script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
+
+</head> 
+<body>
+<!-- wrap -->
+<div class="wrap">
+  <header class="header">
+    <div class="wrapper">
+      <div class="left">
+        <a href="main.html" class="btn-back"><i class="ico-back"></i></a>
+        <span class="tit-txt">승차권 예매</span>
+      </div>
+      <div class="right">
+        <button type="button" class="btn-menu" onclick="gnbMenu();"><i class="ico-menu"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="content">
+    <div class="tit-wrap top-sticky">
+      <h2 class="tit-type3"><span>결제하기</span>
+      </h2>
+      <div class="float-right">
+        <div class="step-process">
+          <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="on"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- 결제하기 -->
+    <div class="payment-wrap">
+      <dl class="top-total-payment top-sticky" data-top="94">
+        <dt class="medium">총 결제 금액</dt>
+        <dd class="medium">51,900원</dd>
+       </dl>
+
+       <div class="form-type-wrap">
+        <div class="form-type3">
+          <span class="label">카드구분</span>
+          <div class="f-wrap card-type">
+            <label class="on"><input type="radio" name="cardtype" value="person" checked><span>개인</span></label>
+            <label><input type="radio" name="cardtype" value="company"><span>법인</span></label>
+          </div>
+        </div>
+        <div class="form-type3">
+          <span class="label">카드번호</span>
+          <div class="f-wrap" data-id="jump-input">
+            <input type="number" name="cardnum" class="auto align-c" maxlength="4">
+            <input type="number" name="cardnum" class="auto align-c" maxlength="4">
+            <input type="number" name="cardnum" class="auto align-c" maxlength="4">
+            <input type="number" name="cardnum" class="auto align-c" maxlength="4">
+          </div>
+        </div>
+        <div class="form-type3">
+          <div class="f-wrap">
+            <div class="auto">
+              <span class="label">유효기간(월 MM)</span>
+              <select>
+                <option>01</option>
+                <option>02</option>
+              </select>
+            </div>
+            <div class="auto">
+              <span class="label">유효기간(년 YY)</span>
+              <select>
+                <option>23</option>
+                <option>24</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-type3">
+          <span class="label">비밀번호(앞 2자리)</span>
+          <input type="password" name="pw" placeholder="카드 비밀번호 앞 2자리를 입력하세요" maxlength="2">
+        </div>
+        <div class="form-type3" data-id="personnum">
+          <span class="label">주민번호 6자리</span>
+          <input type="number" name="personnum" placeholder="주민번호 앞 6자리를 입력하세요" maxlength="6">
+        </div>
+        <div class="form-type3" data-id="companynum" style="display:none">
+          <span class="label">사업자등록번호</span>
+          <input type="number" name="companynum" placeholder="사업자등록번호를 입력하세요">
+        </div>
+        <div class="form-type3">
+          <span class="label">할부기간</span>
+          <select>
+            <option>일시불</option>
+            <option>무이자</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+    <!-- // payment-wrap -->
+  </div>
+  <!-- // content -->
+
+  <!--하단 고정버튼-->
+  <div class="fixed-footer-wrap">
+    <div class="btn-wrap">
+      <button type="button" class="btn-type1 st1" disabled data-id="active">결제하기</button>
+    </div>
+  </div> 
+</div>
+<!-- // wrap -->
+
+<script>
+  jumpInput();
+  maxLengthChk('[type=number][maxlength]');
+
+  let formChecked = function(){
+    let $checkForm = $('[name=cardtype]:checked').val() == 'person' ? $('[name=cardnum], [name=pw], [name=personnum]') : $('[name=cardnum], [name=pw], [name=companynum]');
+    let checked = $.map($checkForm, function(el){
+          return el.hasAttribute('maxlength') ? (el.value.length == el.maxLength ? true : false) : (el.value.length > 0 ? true : false)
+        });
+    return checked.includes(false) ? false : true;
+  }
+
+  function activeBtnCheck(checked){   
+    let $btnActive = $('[data-id="active"]');
+
+    if(checked()){
+      $btnActive.removeAttr('disabled');
+    }else{
+      $btnActive.attr('disabled', 'disabled');
+    }
+  }
+
+
+  $('[name=cardtype]').on('change', function(){
+    $('[data-id="personnum"]').val('');
+    $('[data-id="companynum"]').val('');
+    activeBtnCheck(formChecked);
+    
+    if($('[name=cardtype]:checked').val() == 'person'){
+      $('[data-id="companynum"]').hide();
+      $('[data-id="personnum"]').show();
+    }else{
+      $('[data-id="companynum"]').show();
+      $('[data-id="personnum"]').hide();
+    }
+  });
+
+
+  $('[name=cardnum], [name=pw], [name=personnum], [name=companynum]').on('keyup', function(){
+    activeBtnCheck(formChecked)
+  });
+
+</script>
+
+</body>
+</html>
