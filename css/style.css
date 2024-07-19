@@ -608,10 +608,13 @@
 .payment-method dt{margin-bottom:15px;display:flex;align-items:center;flex-wrap: wrap;}
 .payment-method dt .txt{width:100%; color:#ACAAAA;font-size:13px;margin-top:5px;}
 .payment-method dt .right{margin-left:auto;}
+.payment-method dt + dd .method-tit{margin-top:-5px;}
 .payment-method dd{position:relative;}
-
+.payment-method dd ~ dd{margin-top:35px;}
+.payment-method dd .method-tit{color: #ACAAAA;font-size: 12px;margin-bottom:12px;display:flex;align-items:center;}
+.payment-method dd .method-tag{background: #EADAF8;	border-radius: 5px;	padding:0 5px;height:17px;line-height:17px;font-size: 10px;color: #7030A0;display:inline-block;margin-left:5px;}
 .payment-method dd .method-list button{height:50px;border-radius:6px;border:1px solid #000;font-size:15px;font-weight:500;width:100%; color:#000;}
-.payment-method dd .method-list .apple-pay-button{width:100%;-webkit-appearance: -apple-pay-button; --apple-pay-button-height: 50px; --apple-pay-button-border-radius: 6px; --apple-pay-button-padding: 7px 0; --apple-pay-button-box-sizing: border-box; -apple-pay-button-type: donate; -apple-pay-button-style: white; border-radius:6px;}
+.payment-method dd .method-list .apple-pay-button{width:100%;-webkit-appearance: -apple-pay-button; --apple-pay-button-height: 50px; --apple-pay-button-border-radius: 6px; --apple-pay-button-padding: 8px 0 !important; --apple-pay-button-box-sizing: border-box; -apple-pay-button-type: donate; -apple-pay-button-style: white; border-radius:6px;}
 .payment-method dd .method-list button{max-width: 100%;}
 .payment-method dd .method-list button .ico-card{position:relative;top:-1px;}
 .payment-method dd .method-list button i{margin-right:5px;}
@@ -629,14 +632,7 @@
 .payment-method dd .method-list > * ~  [class*=list]{margin-top:10px;}
 .payment-method dd .method-list .cash{display:inline-block;width:32px;height:22px;background:url('../images/common/ico-cash.png') no-repeat 0 0;background-size:100% 100%;vertical-align: middle;position:relative;top:-1px}
 .payment-method dd .method-list .card{display:inline-block;width:18px;height:16px;background:url("data:image/svg+xml,%3Csvg width='39' height='32' viewBox='0 0 39 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 7.66039C0 3.42967 3.46618 0 7.74194 0H30.4516C34.7274 0 38.1936 3.42967 38.1936 7.66039V24.3396C38.1936 28.5703 34.7274 32 30.4516 32H7.74194C3.46618 32 0 28.5703 0 24.3396V7.66039ZM7.74194 3.06416C5.17648 3.06416 3.09677 5.12196 3.09677 7.66039V24.3396C3.09677 26.878 5.17648 28.9358 7.74194 28.9358H30.4516C33.0171 28.9358 35.0968 26.878 35.0968 24.3396V7.66039C35.0968 5.12196 33.0171 3.06416 30.4516 3.06416H7.74194Z' fill='%23222222'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M36.6451 11.7458H1.54834V8.68164H36.6451V11.7458Z' fill='%23222222'/%3E%3Cpath d='M26.8911 25.4528C29.1715 25.4528 31.0202 23.6237 31.0202 21.3673C31.0202 19.1109 29.1715 17.2817 26.8911 17.2817C24.6107 17.2817 22.7621 19.1109 22.7621 21.3673C22.7621 23.6237 24.6107 25.4528 26.8911 25.4528Z' fill='%23BBBBBB'/%3E%3Cpath d='M21.7299 25.4528C24.0103 25.4528 25.8589 23.6237 25.8589 21.3673C25.8589 19.1109 24.0103 17.2817 21.7299 17.2817C19.4495 17.2817 17.6008 19.1109 17.6008 21.3673C17.6008 23.6237 19.4495 25.4528 21.7299 25.4528Z' fill='%23DCDCDC'/%3E%3C/svg%3E%0A") no-repeat 0 0;background-size:100% 100%;vertical-align: middle;position:relative;top:-1px}
-.payment-method dd .method-list .applepay{height:18px;}
-.payment-method dd .method-list .npay{height:20px;}
-.payment-method dd .method-list .cacaopay{height:22px;}
-.payment-method dd .method-list .toss{height:18px;}
-.payment-method dd .method-list .payco{height:12px;}
-
-.payment-method dd .method-list button{height:50px;border-radius:6px;border:1px solid #000;font-size:15px;font-weight:500;width:100%; color:#000;}
-.payment-method dd .method-list .apple-pay-button{width:100%;-webkit-appearance: -apple-pay-button; --apple-pay-button-height: 50px; --apple-pay-button-border-radius: 6px; --apple-pay-button-padding: 7px 0; --apple-pay-button-box-sizing: border-box; -apple-pay-button-type: donate; -apple-pay-button-style: white; border-radius:6px;}
+.payment-method dd .method-list button{height:50px;border-radius:6px;border:1px solid #000;font-size:14px;font-weight:500;width:100%; color:#000;}
 .payment-method dd .method-list button{max-width: 100%;}
 .payment-method dd .method-list button .ico-card{position:relative;top:-1px;}
 .payment-method dd .method-list button i{margin-right:5px;}
@@ -654,11 +650,8 @@
 .payment-method dd .method-list > * ~  [class*=list]{margin-top:10px;}
 .payment-method dd .method-list .cash{display:inline-block;width:32px;height:22px;background:url('../images/common/ico-cash.png') no-repeat 0 0;background-size:100% 100%;vertical-align: middle;position:relative;top:-1px}
 .payment-method dd .method-list .card{display:inline-block;width:18px;height:16px;background:url("data:image/svg+xml,%3Csvg width='39' height='32' viewBox='0 0 39 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 7.66039C0 3.42967 3.46618 0 7.74194 0H30.4516C34.7274 0 38.1936 3.42967 38.1936 7.66039V24.3396C38.1936 28.5703 34.7274 32 30.4516 32H7.74194C3.46618 32 0 28.5703 0 24.3396V7.66039ZM7.74194 3.06416C5.17648 3.06416 3.09677 5.12196 3.09677 7.66039V24.3396C3.09677 26.878 5.17648 28.9358 7.74194 28.9358H30.4516C33.0171 28.9358 35.0968 26.878 35.0968 24.3396V7.66039C35.0968 5.12196 33.0171 3.06416 30.4516 3.06416H7.74194Z' fill='%23222222'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M36.6451 11.7458H1.54834V8.68164H36.6451V11.7458Z' fill='%23222222'/%3E%3Cpath d='M26.8911 25.4528C29.1715 25.4528 31.0202 23.6237 31.0202 21.3673C31.0202 19.1109 29.1715 17.2817 26.8911 17.2817C24.6107 17.2817 22.7621 19.1109 22.7621 21.3673C22.7621 23.6237 24.6107 25.4528 26.8911 25.4528Z' fill='%23BBBBBB'/%3E%3Cpath d='M21.7299 25.4528C24.0103 25.4528 25.8589 23.6237 25.8589 21.3673C25.8589 19.1109 24.0103 17.2817 21.7299 17.2817C19.4495 17.2817 17.6008 19.1109 17.6008 21.3673C17.6008 23.6237 19.4495 25.4528 21.7299 25.4528Z' fill='%23DCDCDC'/%3E%3C/svg%3E%0A") no-repeat 0 0;background-size:100% 100%;vertical-align: middle;position:relative;top:-1px}
-.payment-method dd .method-list .applepay{height:18px;}
-.payment-method dd .method-list .npay{height:20px;}
-.payment-method dd .method-list .cacaopay{height:22px;}
-.payment-method dd .method-list .toss{height:18px;}
-.payment-method dd .method-list .payco{height:12px;}
+.payment-method dd .method-list .cacaopay{height:17px;}
+.payment-method dd .method-list .cacaopay + div{margin-top:2px;}
 
 .payment-method dd .method-list2{display:grid;grid-template-columns: 1fr 1fr;grid-gap: 20px;}
 .payment-method dd .method-list2 li input{position:absolute;top:0;left:0;}

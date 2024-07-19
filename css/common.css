@@ -847,6 +847,7 @@ button.btn-type7 .ico-srtplay{position:relative;top:-1px;}
 
 
 .list-dot.sm{font-size:13px;}
+.list-dot.sm2{font-size:12px;}
 .list-dot li{line-height:1.4;padding-left:10px;position:relative;}
 .list-dot li.lt-sm{letter-spacing: -0.08em;}
 .list-dot li:before{content:'';display:block;width:3px;height:3px;border-radius:3px;background:#1F2125;position:absolute;top:7px;left:0;}
@@ -1384,6 +1385,8 @@ form + .banner-wrap,
 .popup-wrap .pop-wrap .popup > .btn-close{position:absolute;top:0;right:0;width:50px;height:50px;background:url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='-0.639648' y='2.40894' width='3.52' height='35.2' rx='1.76' transform='rotate(-45 -0.639648 2.40894)' fill='%23ACAAAA'/%3E%3Crect x='24.4404' y='-0.0800781' width='3.52' height='35.2' rx='1.76' transform='rotate(45 24.4404 -0.0800781)' fill='%23ACAAAA'/%3E%3C/svg%3E%0A") no-repeat 50% 50%;background-size:auto 14px;}
 .popup-wrap .pop-wrap .popup > .btn-close ~ .pop-body{padding-top:40px;}
 .popup-wrap .pop-wrap .popup .pop-body{padding:20px;min-height: 110px;flex:1;overflow-x:hidden;overflow-y:auto;max-height: 65vh;}
+.popup-wrap .pop-wrap .popup .pop-body .pop-body-tit{display:block;font-size: 14px;margin-bottom:15px;}
+.popup-wrap .pop-wrap .popup .pop-body .pop-body-tit + .list-dot{padding-left:7px;}
 .popup-wrap .pop-wrap .popup .pop-img{border-radius:10px 10px 0 0;overflow:hidden;}
 .popup-wrap .pop-wrap .popup .btn-wrap{border-top:1px solid #DCDEE2;display:flex;align-items:center;}
 .popup-wrap .pop-wrap .popup .btn-wrap.noline-t{border-top:none;}
