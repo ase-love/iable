@@ -165,6 +165,7 @@
 
 .recommend-travel{padding-top:20px;}
 .recommend-travel .tit-wrap{margin-bottom:20px;}
+.recommend-travel .product-type3 .img:not(.img-prd) img{height:auto !important;}
 
 .product-type3 .img:not(.img-prd) img{height:85px;;}
 .product-type3 .desc .label{margin-bottom:3px;}

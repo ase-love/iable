@@ -5,7 +5,7 @@
 [class*=ico-] svg{width:100%;height:100%;vertical-align:top;}
 [class*=ico-] svg image{width:100%;height:100%;vertical-align:top;}
 
-.ico-logo{width:100px;height:27px;}
+.ico-logo{width:78px;height:22px;}
 .text-login-intro .logo .ico-logo{width:100px;height:27px;}
 
 .ico-gnb-smile{width:22px;height:22px;}
@@ -128,11 +128,6 @@
 .ico-more-view{width:16px;height:15px;}
 .ico-mapidx{width:9px;height:12px;}
 .ico-movie-play{width:70px;height:43px;}
-.ico-cate-srt {width:39px;height:39px;}
-.ico-cate-times {width:39px;height:39px;}
-.ico-cate-trip {width:39px;height:39px;}
-.ico-cate-market {width:39px;height:39px;}
-.ico-cate-giftcard2 {width:39px;height:39px;}
 
 .ico-cate-time {width:29px;height:29px;}
 .ico-cate-travel {width:23px;height:35px;}
