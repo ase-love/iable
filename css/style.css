@@ -1091,9 +1091,8 @@
 .pop-reserve-wrap [class*=btn-type] + .btn-wrap{margin-top:8px;}
 .pop-reserve-wrap .btn-wrap [class*=btn-type]{margin-top:0;}
 .pop-reserve-wrap .noti{font-size:12px; color:#7030A0;text-align:center;margin-top:6px;padding-bottom:5px;}
-.pop-reserve-wrap .noti2{font-size:14px;text-align:center; color:rgba(31, 33, 37, 1);}
-.pop-reserve-wrap .noti2 + *{margin-top:10px;}
-.pop-reserve-wrap .line-through{text-decoration: line-through;}
+.pop-reserve-wrap .btn-wrap:first-child{margin-top:0;}
+
 
 .facilities-txt{font-size:12px;padding:10px 0; color:#ACAAAA;text-align:center;}
 .facilities-info{height:100px;background:#f6f7f9;display:flex;justify-content: space-around;align-items:center;padding:0 20px !important;}
