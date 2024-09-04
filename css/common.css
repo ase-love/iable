@@ -1410,7 +1410,7 @@ form + .banner-wrap,
 .popup-wrap .pop-wrap .popup{min-width:300px;padding:0 0;max-width: 90vw;border-radius:10px;background:#fff;}
 .popup-wrap .pop-wrap .popup .pop-header{position:relative;height:50px;display:flex;flex-direction:row;align-items:center;border-bottom: 1px solid #E4E8F1;}
 .popup-wrap .pop-wrap .popup .pop-header .tit{font-size:15px;font-weight:500; color:#000;text-align:center;display:block;flex:1;}
-.popup-wrap .pop-wrap .popup > .btn-close{position:absolute;top:0;right:0;width:50px;height:50px;background:url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='-0.639648' y='2.40894' width='3.52' height='35.2' rx='1.76' transform='rotate(-45 -0.639648 2.40894)' fill='%23ACAAAA'/%3E%3Crect x='24.4404' y='-0.0800781' width='3.52' height='35.2' rx='1.76' transform='rotate(45 24.4404 -0.0800781)' fill='%23ACAAAA'/%3E%3C/svg%3E%0A") no-repeat 50% 50%;background-size:auto 14px;}
+.popup-wrap .pop-wrap .popup > .btn-close{position:absolute;top:0;right:0;width:50px;height:50px;z-index: 5; background:url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='-0.639648' y='2.40894' width='3.52' height='35.2' rx='1.76' transform='rotate(-45 -0.639648 2.40894)' fill='%23ACAAAA'/%3E%3Crect x='24.4404' y='-0.0800781' width='3.52' height='35.2' rx='1.76' transform='rotate(45 24.4404 -0.0800781)' fill='%23ACAAAA'/%3E%3C/svg%3E%0A") no-repeat 50% 50%;background-size:auto 14px;}
 .popup-wrap .pop-wrap .popup > .btn-close ~ .pop-body{padding-top:40px;}
 .popup-wrap .pop-wrap .popup .pop-body{padding:20px;min-height: 110px;flex:1;overflow-x:hidden;overflow-y:auto;max-height: 65vh;}
 .popup-wrap .pop-wrap .popup .pop-body .pop-body-tit{display:block;font-size: 14px;margin-bottom:15px;}
@@ -1422,6 +1422,8 @@ form + .banner-wrap,
 .popup-wrap .pop-wrap .popup .pop-footer .btn-wrap{display:flex;flex-direction: row;}
 .popup-wrap .pop-wrap .popup .pop-footer .btn-wrap .btn{flex:1;height:50px;display:flex;justify-content:center;align-items:center;font-size:15px;font-weight: 500;}
 .popup-wrap .pop-wrap .popup .pop-footer .btn-wrap .btn ~ .btn{border-left:1px solid #E4E8F1;}
+.popup-wrap .pop-wrap .popup .pop-footer .btn-wrap .btn.column{display:flex;justify-content:center;align-items:center;flex-direction: column;height:60px;}
+.popup-wrap .pop-wrap .popup .pop-footer .btn-wrap .btn small{ font-weight:300;font-size:12px;line-height:1.4;}
 /* 공지 노티형 */
 .popup-wrap.st2 .pop-wrap .popup .pop-header{margin:0 20px;height:60px;}
 .popup-wrap.st2 .pop-wrap .popup .pop-header .tit{text-align:left;font-size:16px;font-weight:500;}

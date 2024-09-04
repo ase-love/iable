@@ -1075,8 +1075,9 @@ function timeTable(){
 
     $wrap.removeClass('sale');
 
-    $('[data-id=sale-ticket]').hide();
-    $('[data-id=normal-ticket]').show();
+    // 하단에서 올라오던 버튼 숨기고 레이어로 바로오픈함
+    // $('[data-id=sale-ticket]').hide();
+    // $('[data-id=normal-ticket]').show();
 
   });
   //할인예약버튼
@@ -1086,8 +1087,9 @@ function timeTable(){
 
     $wrap.addClass('sale');
 
-    $('[data-id=normal-ticket]').hide();
-    $('[data-id=sale-ticket]').show();
+    // 하단에서 올라오던 버튼 숨기고 레이어로 바로오픈함
+    // $('[data-id=normal-ticket]').hide();
+    // $('[data-id=sale-ticket]').show();
   });
 
 }

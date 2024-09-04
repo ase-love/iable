@@ -54,7 +54,7 @@
       </p>
     </div>
     <!-- // text-main -->
-    <div class="quick-menu st2">
+    <!-- <div class="quick-menu st2">
       <ul>
         <li>
           <a href="javascript:void(0);">
@@ -73,12 +73,12 @@
         </li>
         <li>
           <a href="javascript:void(0);">
-            <div class="icon"><i class="ico-myticket"></i></div>
+            <div class="icon"><i class="ico-cate-myticket"></i></div>
             <span class="txt">내 승차권 확인</span>
           </a>
         </li>
       </ul>
-    </div>
+    </div> -->
 
     <!-- reserve-condition -->
     <div class="reserve-condition">
@@ -253,8 +253,39 @@
 </div>
 <!-- // wrap -->
 
+  <!-- 팝업: 금액권알림-->
+  <div class="popup-wrap" id="pop-giftmoney">
+    <div class="dim"></div>
+    <div class="pop-wrap">
+      <div class="popup">
+        <button class="btn-close"></button>
+        <div class="pop-body">
+          <div class="pop-guide-wrap">
+            <div class="txt align-c">앗! 승차 인원이 등록된 금액권 보다 많아요.
+              <br>(금액권은 승차 좌석당 1개 적용 가능합니다.)</div>
+            <div class="txt c-pupple align-c">“사용하시려면 열차를 다시 조회해 주세요.”</div>            
+          </div>        
+        </div>
+        <div class="pop-footer">
+          <div class="btn-wrap">
+            <a href="javascript:void(0);" class="btn column" onclick="popClose('#pop-giftmoney');">
+              <small class="light">승차 인원 변경하고</small>
+              <span>열차 조회하기</span>
+            </a>
+            <a href="javascript:void(0);" class="btn column" onclick="popClose('#pop-giftmoney');">
+              <small class="light">금액권 사용하지 않고,</small>
+              <span>예매 계속하기</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+  <!-- // 팝업: 금액권알림-->  
 
 <script>
+
+  popOpen('#pop-giftmoney');
 
   loadInclude('reserve-options');
 
